@@ -1,11 +1,11 @@
-# Useventtos - Popup Oficial V3
+# Useventtos - Popup V4 Animado
 
-Correções:
-- Removida a moldura externa que parecia segundo popup
-- Mantido apenas o X visual da arte como área clicável
-- Animação de fumaça verde mais visível
-- Bolinhas/brilhos com flutuação mais perceptível
-- Barra de progresso fina
-- Botões da página vinculados à Shopee
+- Novo popup aprovado
+- Fumaça verde com vento leve
+- Filetes/partículas caindo
+- Bolinhas caindo e posicionando na parte inferior
+- Botão Ver o site
+- Fechamento automático em 25s
+- Botões vinculados à Shopee
 
 Suba todos os arquivos na raiz do GitHub.

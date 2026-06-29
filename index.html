@@ -1,301 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Useventtos | Mini Sneaker Deodorizer</title>
-  <meta name="description" content="Useventtos Mini Sneaker Deodorizer. Seu tênis sempre pronto para usar." />
-  <meta name="theme-color" content="#050705" />
-  <meta property="og:title" content="Useventtos | Seu tênis sempre pronto para usar" />
-  <meta property="og:description" content="Mini Sneaker Deodorizer com refil aromático e até 30 dias de frescor." />
-  <meta property="og:image" content="useventtos-home.png" />
-
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{background:#050705}
-    body{
-      font-family:Arial,Helvetica,sans-serif;
-      background:#050705;
-      color:#fff;
-      overflow-x:auto;
-    }
-    .wrap{
-      position:relative;
-      width:100%;
-      max-width:1440px;
-      margin:0 auto;
-      background:#050705;
-    }
-    .site-image{
-      width:100%;
-      height:auto;
-      display:block;
-      user-select:none;
-    }
-
-    .hotspot{
-      position:absolute;
-      z-index:10;
-      display:block;
-      border-radius:999px;
-      cursor:pointer;
-    }
-    .buy-header{left:81%;top:3.7%;width:15.5%;height:3.2%}
-    .buy-hero{left:4.5%;top:26.1%;width:19.7%;height:3.5%}
-    .buy-kit-1{left:5.1%;top:66.9%;width:17.2%;height:2.6%}
-    .buy-kit-2{left:51.6%;top:66.9%;width:18.2%;height:2.6%}
-    .buy-footer{left:78.2%;top:94.1%;width:17.5%;height:3.1%}
-
-    .floating-buy{
-      position:fixed;
-      right:22px;
-      bottom:22px;
-      z-index:30;
-      background:#a8ff00;
-      color:#111;
-      text-decoration:none;
-      font-weight:900;
-      padding:15px 24px;
-      border-radius:999px;
-      box-shadow:0 18px 50px rgba(168,255,0,.25);
-      transition:.2s ease;
-    }
-    .floating-buy:hover{transform:translateY(-3px)}
-
-    .popup-overlay{
-      position:fixed;
-      inset:0;
-      z-index:100;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:22px;
-      background:rgba(0,0,0,.74);
-      backdrop-filter:blur(12px);
-      opacity:0;
-      visibility:hidden;
-      transition:opacity .38s ease, visibility .38s ease;
-    }
-    .popup-overlay.show{
-      opacity:1;
-      visibility:visible;
-    }
-
-    /* Sem borda externa para não parecer 2 popups */
-    .popup-box{
-      position:relative;
-      width:min(92vw,1100px);
-      border-radius:24px;
-      overflow:hidden;
-      background:transparent;
-      box-shadow:0 40px 140px rgba(0,0,0,.78);
-      transform:translateY(24px) scale(.95);
-      transition:transform .42s cubic-bezier(.16,1,.3,1);
-      isolation:isolate;
-    }
-    .popup-overlay.show .popup-box{
-      transform:translateY(0) scale(1);
-    }
-    .popup-img{
-      width:100%;
-      height:auto;
-      display:block;
-      user-select:none;
-      pointer-events:none;
-      position:relative;
-      z-index:1;
-    }
-
-    /* X invisível por cima do X da própria arte */
-    .popup-close{
-      position:absolute;
-      right:3.6%;
-      top:5.8%;
-      width:52px;
-      height:52px;
-      border-radius:50%;
-      border:0;
-      background:transparent;
-      cursor:pointer;
-      z-index:8;
-    }
-
-    .popup-see-site{
-      position:absolute;
-      left:36.6%;
-      top:80.7%;
-      width:26.8%;
-      height:7.2%;
-      border-radius:999px;
-      z-index:8;
-      cursor:pointer;
-      background:transparent;
-      border:0;
-    }
-
-    .popup-progress{
-      position:absolute;
-      left:11.6%;
-      bottom:8.2%;
-      height:2px;
-      width:76.8%;
-      background:rgba(168,255,0,.18);
-      z-index:7;
-      border-radius:999px;
-      overflow:hidden;
-    }
-    .popup-progress span{
-      display:block;
-      width:100%;
-      height:100%;
-      background:#a8ff00;
-      transform-origin:left center;
-      animation:timerbar 25s linear forwards;
-      box-shadow:0 0 14px rgba(168,255,0,.95);
-    }
-    @keyframes timerbar{
-      from{transform:scaleX(1)}
-      to{transform:scaleX(0)}
-    }
-
-    /* Animação real e mais visível */
-    .smoke-layer{
-      position:absolute;
-      left:-5%;
-      top:-8%;
-      width:62%;
-      height:112%;
-      z-index:3;
-      pointer-events:none;
-      opacity:.55;
-      filter:blur(10px);
-      mix-blend-mode:screen;
-      background:
-        radial-gradient(ellipse at 24% 22%, rgba(168,255,0,.28), transparent 30%),
-        radial-gradient(ellipse at 42% 44%, rgba(168,255,0,.20), transparent 28%),
-        radial-gradient(ellipse at 16% 68%, rgba(168,255,0,.18), transparent 32%);
-      animation:smokeDrift 5.8s ease-in-out infinite alternate;
-    }
-    .smoke-layer:before,
-    .smoke-layer:after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(ellipse at 32% 36%, rgba(210,255,126,.22), transparent 24%),
-        radial-gradient(ellipse at 56% 62%, rgba(168,255,0,.16), transparent 22%);
-      filter:blur(18px);
-      animation:smokeDrift2 7s ease-in-out infinite alternate;
-    }
-    .smoke-layer:after{
-      opacity:.65;
-      animation-duration:9s;
-      animation-direction:alternate-reverse;
-    }
-    @keyframes smokeDrift{
-      from{transform:translate(-22px,18px) scale(1) rotate(-2deg);opacity:.34}
-      to{transform:translate(28px,-18px) scale(1.12) rotate(3deg);opacity:.68}
-    }
-    @keyframes smokeDrift2{
-      from{transform:translate(10px,-8px) scale(1.06)}
-      to{transform:translate(-18px,16px) scale(1.18)}
-    }
-
-    .orb{
-      position:absolute;
-      z-index:4;
-      border-radius:50%;
-      pointer-events:none;
-      background:radial-gradient(circle at 35% 30%, #e7ff9b, #a8ff00 42%, rgba(77,133,0,.45) 75%);
-      box-shadow:0 0 28px rgba(168,255,0,.55);
-      opacity:.50;
-      animation:floatOrb 3.8s ease-in-out infinite alternate;
-    }
-    .orb.one{width:34px;height:34px;left:42%;top:16%;animation-delay:.2s}
-    .orb.two{width:22px;height:22px;left:28%;top:71%;animation-delay:1s}
-    .orb.three{width:18px;height:18px;left:47%;top:68%;animation-delay:1.8s}
-    @keyframes floatOrb{
-      from{transform:translateY(0) translateX(0) scale(1)}
-      to{transform:translateY(-16px) translateX(10px) scale(1.08)}
-    }
-
-    @media(max-width:768px){
-      .wrap{
-        width:1440px;
-        max-width:none;
-      }
-      .floating-buy{
-        right:14px;
-        bottom:14px;
-        padding:14px 20px;
-      }
-      .popup-box{
-        width:96vw;
-        border-radius:18px;
-      }
-      .popup-close{
-        right:3.3%;
-        top:4.5%;
-        width:44px;
-        height:44px;
-      }
-      .popup-see-site{
-        left:33%;
-        top:80.2%;
-        width:34%;
-        height:7.5%;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Useventtos | Mini Sneaker Deodorizer</title>
+<meta name="description" content="Useventtos Mini Sneaker Deodorizer. Seu tênis sempre pronto para usar." />
+<meta name="theme-color" content="#050705" />
+<meta property="og:title" content="Useventtos | Seu tênis sempre pronto para usar" />
+<meta property="og:description" content="Mini Sneaker Deodorizer com refil aromático e até 30 dias de frescor." />
+<meta property="og:image" content="useventtos-home.png" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#050705}
+body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overflow-x:auto}
+.wrap{position:relative;width:100%;max-width:1440px;margin:0 auto;background:#050705}
+.site-image{width:100%;height:auto;display:block;user-select:none}
+.hotspot{position:absolute;z-index:10;display:block;border-radius:999px;cursor:pointer}
+.buy-header{left:81%;top:3.7%;width:15.5%;height:3.2%}
+.buy-hero{left:4.5%;top:26.1%;width:19.7%;height:3.5%}
+.buy-kit-1{left:5.1%;top:66.9%;width:17.2%;height:2.6%}
+.buy-kit-2{left:51.6%;top:66.9%;width:18.2%;height:2.6%}
+.buy-footer{left:78.2%;top:94.1%;width:17.5%;height:3.1%}
+.floating-buy{position:fixed;right:22px;bottom:22px;z-index:30;background:#a8ff00;color:#111;text-decoration:none;font-weight:900;padding:15px 24px;border-radius:999px;box-shadow:0 18px 50px rgba(168,255,0,.25);transition:.2s ease}
+.floating-buy:hover{transform:translateY(-3px)}
+.popup-overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(0,0,0,.74);backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:opacity .38s ease, visibility .38s ease}
+.popup-overlay.show{opacity:1;visibility:visible}
+.popup-box{position:relative;width:min(94vw,1160px);border-radius:24px;overflow:hidden;background:transparent;box-shadow:0 40px 140px rgba(0,0,0,.78);transform:translateY(24px) scale(.95);transition:transform .42s cubic-bezier(.16,1,.3,1);isolation:isolate}
+.popup-overlay.show .popup-box{transform:translateY(0) scale(1)}
+.popup-img{width:100%;height:auto;display:block;user-select:none;pointer-events:none;position:relative;z-index:1}
+.popup-close{position:absolute;right:3.7%;top:5.3%;width:54px;height:54px;border-radius:50%;border:0;background:transparent;cursor:pointer;z-index:12}
+.popup-see-site{position:absolute;left:59.5%;top:80.5%;width:25.5%;height:7.4%;border-radius:999px;z-index:12;cursor:pointer;background:transparent;border:0}
+.popup-progress{position:absolute;left:10.2%;bottom:7.8%;height:3px;width:75.8%;background:rgba(168,255,0,.13);z-index:11;border-radius:999px;overflow:hidden}
+.popup-progress span{display:block;width:100%;height:100%;background:#a8ff00;transform-origin:left center;animation:timerbar 25s linear forwards;box-shadow:0 0 14px rgba(168,255,0,.95)}
+@keyframes timerbar{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+.wind-smoke,.wind-smoke-2,.wind-smoke-3{position:absolute;z-index:4;pointer-events:none;mix-blend-mode:screen;filter:blur(12px);background:radial-gradient(ellipse at 20% 35%,rgba(190,255,45,.34),transparent 28%),radial-gradient(ellipse at 45% 42%,rgba(168,255,0,.24),transparent 30%),radial-gradient(ellipse at 28% 65%,rgba(100,190,0,.20),transparent 34%);opacity:.62}
+.wind-smoke{left:-18%;top:6%;width:64%;height:68%;animation:windSmoke 5.5s ease-in-out infinite alternate}
+.wind-smoke-2{left:2%;top:28%;width:56%;height:55%;opacity:.48;animation:windSmoke2 7.2s ease-in-out infinite alternate}
+.wind-smoke-3{left:-10%;top:48%;width:52%;height:38%;opacity:.38;animation:windSmoke3 6.8s ease-in-out infinite alternate-reverse}
+@keyframes windSmoke{from{transform:translateX(-34px) translateY(14px) scale(1) rotate(-3deg)}to{transform:translateX(72px) translateY(-18px) scale(1.16) rotate(4deg)}}
+@keyframes windSmoke2{from{transform:translateX(-18px) translateY(-8px) scale(1.04)}to{transform:translateX(84px) translateY(12px) scale(1.22)}}
+@keyframes windSmoke3{from{transform:translateX(-22px) translateY(10px) scale(.95)}to{transform:translateX(58px) translateY(-8px) scale(1.12)}}
+.rain{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+.drop{position:absolute;top:-12%;width:2px;height:54px;border-radius:999px;background:linear-gradient(to bottom,transparent,rgba(168,255,0,.95),transparent);filter:drop-shadow(0 0 8px rgba(168,255,0,.8));opacity:.55;animation:dropFall linear infinite}
+.drop:nth-child(1){left:18%;animation-duration:2.8s;animation-delay:.2s}
+.drop:nth-child(2){left:29%;animation-duration:3.5s;animation-delay:1s}
+.drop:nth-child(3){left:39%;animation-duration:2.9s;animation-delay:.6s}
+.drop:nth-child(4){left:51%;animation-duration:3.8s;animation-delay:1.4s}
+.drop:nth-child(5){left:72%;animation-duration:3.2s;animation-delay:.9s}
+.drop:nth-child(6){left:86%;animation-duration:4s;animation-delay:1.8s}
+@keyframes dropFall{0%{transform:translateY(-20%) scaleY(.4);opacity:0}18%{opacity:.85}100%{transform:translateY(1180%) scaleY(1);opacity:0}}
+.fall-ball{position:absolute;z-index:6;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 35% 28%,#eaff9b 0%,#a8ff00 25%,#73b900 56%,#244500 100%);box-shadow:0 0 30px rgba(168,255,0,.55), inset -8px -10px 18px rgba(0,0,0,.35);opacity:.92;transform:translateY(-180px);animation:ballDrop 4.2s cubic-bezier(.18,.82,.24,1) forwards, ballRest 3s ease-in-out 4.2s infinite alternate}
+.fall-ball:after{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.25),transparent 55%);opacity:.45}
+.ball1{width:42px;height:42px;left:33%;top:71%;animation-delay:.25s,4.45s}
+.ball2{width:30px;height:30px;left:43%;top:72%;animation-delay:.75s,4.95s}
+.ball3{width:24px;height:24px;left:52%;top:74%;animation-delay:1.15s,5.35s}
+.ball4{width:20px;height:20px;left:60%;top:73%;animation-delay:1.55s,5.75s}
+.ball5{width:26px;height:26px;left:24%;top:73%;animation-delay:1.9s,6.1s}
+@keyframes ballDrop{0%{transform:translateY(-260px) scale(.88);opacity:0}55%{opacity:1}78%{transform:translateY(16px) scale(1.04)}88%{transform:translateY(-8px) scale(.98)}100%{transform:translateY(0) scale(1)}}
+@keyframes ballRest{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+@media(max-width:768px){.wrap{width:1440px;max-width:none}.floating-buy{right:14px;bottom:14px;padding:14px 20px}.popup-box{width:96vw;border-radius:18px}.popup-close{right:3.4%;top:4.9%;width:44px;height:44px}.popup-see-site{left:56%;top:80.2%;width:31%;height:7.7%}}
+</style>
 </head>
-
 <body>
-  <div class="popup-overlay" id="popup">
-    <div class="popup-box">
-      <img class="popup-img" src="popup-useventtos.png" alt="Bem-vindo à Useventtos" />
-      <div class="smoke-layer"></div>
-      <span class="orb one"></span>
-      <span class="orb two"></span>
-      <span class="orb three"></span>
-      <button class="popup-close" id="closePopup" aria-label="Fechar popup"></button>
-      <button class="popup-see-site" id="seeSite" aria-label="Ver o site"></button>
-      <div class="popup-progress"><span></span></div>
-    </div>
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <img class="popup-img" src="popup-useventtos.png" alt="Bem-vindo à Useventtos" />
+    <div class="wind-smoke"></div><div class="wind-smoke-2"></div><div class="wind-smoke-3"></div>
+    <div class="rain"><span class="drop"></span><span class="drop"></span><span class="drop"></span><span class="drop"></span><span class="drop"></span><span class="drop"></span></div>
+    <span class="fall-ball ball1"></span><span class="fall-ball ball2"></span><span class="fall-ball ball3"></span><span class="fall-ball ball4"></span><span class="fall-ball ball5"></span>
+    <button class="popup-close" id="closePopup" aria-label="Fechar popup"></button>
+    <button class="popup-see-site" id="seeSite" aria-label="Ver o site"></button>
+    <div class="popup-progress"><span></span></div>
   </div>
-
-  <main class="wrap">
-    <img class="site-image" src="useventtos-home.png" alt="Useventtos Mini Sneaker Deodorizer" />
-
-    <a class="hotspot buy-header" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
-    <a class="hotspot buy-hero" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
-    <a class="hotspot buy-kit-1" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Kit Mini Sneaker na Shopee"></a>
-    <a class="hotspot buy-kit-2" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Pack Bolinhas Tradicional na Shopee"></a>
-    <a class="hotspot buy-footer" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
-  </main>
-
-  <a class="floating-buy" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
-
-  <script>
-    const popup = document.getElementById("popup");
-    const closePopup = document.getElementById("closePopup");
-    const seeSite = document.getElementById("seeSite");
-
-    function hidePopup(){
-      popup.classList.remove("show");
-    }
-
-    window.addEventListener("load", () => {
-      setTimeout(() => popup.classList.add("show"), 500);
-      setTimeout(hidePopup, 25500);
-    });
-
-    closePopup.addEventListener("click", hidePopup);
-    seeSite.addEventListener("click", hidePopup);
-
-    popup.addEventListener("click", (event) => {
-      if(event.target === popup) hidePopup();
-    });
-  </script>
+</div>
+<main class="wrap">
+  <img class="site-image" src="useventtos-home.png" alt="Useventtos Mini Sneaker Deodorizer" />
+  <a class="hotspot buy-header" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
+  <a class="hotspot buy-hero" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
+  <a class="hotspot buy-kit-1" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Kit Mini Sneaker na Shopee"></a>
+  <a class="hotspot buy-kit-2" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Pack Bolinhas Tradicional na Shopee"></a>
+  <a class="hotspot buy-footer" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
+</main>
+<a class="floating-buy" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
+<script>
+const popup=document.getElementById("popup");
+const closePopup=document.getElementById("closePopup");
+const seeSite=document.getElementById("seeSite");
+function hidePopup(){popup.classList.remove("show")}
+window.addEventListener("load",()=>{setTimeout(()=>popup.classList.add("show"),500);setTimeout(hidePopup,25500)});
+closePopup.addEventListener("click",hidePopup);
+seeSite.addEventListener("click",hidePopup);
+popup.addEventListener("click",(event)=>{if(event.target===popup)hidePopup()});
+</script>
 </body>
 </html>
