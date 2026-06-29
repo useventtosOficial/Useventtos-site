@@ -1,5 +1,16 @@
-# Useventtos Premium Clean V3
+# Useventtos - Modelo específico
 
-Nova versão do site com header preto, logo maior e nome USEVENTTOS em destaque.
+Esta versão usa exatamente o layout aprovado como imagem principal do site.
 
-Suba todos os arquivos na raiz do GitHub Pages.
+## Arquivos
+- index.html
+- useventtos-home.png
+- README.md
+
+## Como subir
+Suba todos os arquivos na raiz do GitHub, substituindo os antigos.
+
+GitHub Pages:
+- Deploy from a branch
+- main/principal
+- /root
