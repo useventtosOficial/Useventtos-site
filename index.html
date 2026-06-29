@@ -3,47 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Useventtos | Mini Sneaker Deodorizer</title>
   <meta name="description" content="Useventtos Mini Sneaker Deodorizer. Seu tênis sempre pronto para usar." />
   <meta name="theme-color" content="#050705" />
+
   <meta property="og:title" content="Useventtos | Seu tênis sempre pronto para usar" />
   <meta property="og:description" content="Mini Sneaker Deodorizer com refil aromático e até 30 dias de frescor." />
   <meta property="og:image" content="useventtos-home.png" />
+
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;background:#050705}
-    body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff}
-    .page{min-height:100vh;background:#050705;display:flex;justify-content:center}
-    .site-image{width:100%;max-width:1440px;height:auto;display:block}
-    .buy-main{
-      position:fixed;right:24px;bottom:24px;z-index:20;
-      background:#a8ff00;color:#111;text-decoration:none;font-weight:900;
-      padding:16px 26px;border-radius:999px;box-shadow:0 18px 50px rgba(168,255,0,.25);
+    html{background:#050705}
+    body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overflow-x:auto}
+    .wrap{
+      position:relative;
+      width:100%;
+      max-width:1440px;
+      margin:0 auto;
+      background:#050705;
+    }
+    .site-image{
+      width:100%;
+      height:auto;
+      display:block;
+      user-select:none;
+    }
+
+    /* Áreas clicáveis sobre os botões da imagem */
+    .hotspot{
+      position:absolute;
+      z-index:10;
+      display:block;
+      border-radius:999px;
+      cursor:pointer;
+    }
+
+    /* Botão comprar no menu superior */
+    .buy-header{
+      left:81%;
+      top:3.7%;
+      width:15.5%;
+      height:3.2%;
+    }
+
+    /* Botão principal do hero */
+    .buy-hero{
+      left:4.5%;
+      top:26.1%;
+      width:19.7%;
+      height:3.5%;
+    }
+
+    /* Botão do Kit Mini Sneaker */
+    .buy-kit-1{
+      left:5.1%;
+      top:66.9%;
+      width:17.2%;
+      height:2.6%;
+    }
+
+    /* Botão do Pack Bolinhas Tradicional */
+    .buy-kit-2{
+      left:51.6%;
+      top:66.9%;
+      width:18.2%;
+      height:2.6%;
+    }
+
+    /* Botão final inferior */
+    .buy-footer{
+      left:78.2%;
+      top:94.1%;
+      width:17.5%;
+      height:3.1%;
+    }
+
+    .floating-buy{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:30;
+      background:#a8ff00;
+      color:#111;
+      text-decoration:none;
+      font-weight:900;
+      padding:15px 24px;
+      border-radius:999px;
+      box-shadow:0 18px 50px rgba(168,255,0,.25);
       transition:.2s ease;
     }
-    .buy-main:hover{transform:translateY(-3px)}
-    .top-click{
-      position:fixed;right:42px;top:76px;z-index:21;width:190px;height:54px;
+    .floating-buy:hover{transform:translateY(-3px)}
+
+    .sound-button{
+      position:fixed;
+      left:22px;
+      bottom:22px;
+      z-index:30;
+      border:1px solid rgba(168,255,0,.45);
+      background:rgba(5,7,5,.75);
+      color:#a8ff00;
+      font-weight:900;
+      padding:13px 18px;
       border-radius:999px;
+      cursor:pointer;
+      backdrop-filter:blur(12px);
+      display:none;
     }
-    .hidden-label{position:absolute;left:-9999px}
+
     @media(max-width:768px){
-      .site-image{width:1400px;max-width:none}
-      .page{overflow-x:auto;justify-content:flex-start}
-      .buy-main{right:14px;bottom:14px;padding:14px 20px}
-      .top-click{display:none}
+      .wrap{
+        width:1440px;
+        max-width:none;
+      }
+      .floating-buy{
+        right:14px;
+        bottom:14px;
+        padding:14px 20px;
+      }
+      .sound-button{
+        left:14px;
+        bottom:14px;
+      }
     }
   </style>
 </head>
-<body>
-  <a class="top-click" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">
-    <span class="hidden-label">Comprar agora</span>
-  </a>
 
-  <main class="page">
+<body>
+  <main class="wrap">
     <img class="site-image" src="useventtos-home.png" alt="Useventtos Mini Sneaker Deodorizer" />
+
+    <a class="hotspot buy-header" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
+    <a class="hotspot buy-hero" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
+    <a class="hotspot buy-kit-1" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Kit Mini Sneaker na Shopee"></a>
+    <a class="hotspot buy-kit-2" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Pack Bolinhas Tradicional na Shopee"></a>
+    <a class="hotspot buy-footer" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
   </main>
 
-  <a class="buy-main" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
+  <a class="floating-buy" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
+
+  <!-- Música opcional:
+       Para ativar, suba um arquivo chamado musica.mp3 na raiz do GitHub
+       e remova o comentário do player abaixo.
+
+  <audio id="music" src="musica.mp3" loop></audio>
+  <button class="sound-button" id="soundBtn">Ativar som</button>
+
+  <script>
+    const btn = document.getElementById("soundBtn");
+    const music = document.getElementById("music");
+    btn.style.display = "block";
+    btn.addEventListener("click", async () => {
+      try {
+        if (music.paused) {
+          await music.play();
+          btn.textContent = "Pausar som";
+        } else {
+          music.pause();
+          btn.textContent = "Ativar som";
+        }
+      } catch(e) {
+        btn.textContent = "Som bloqueado";
+      }
+    });
+  </script>
+  -->
 </body>
 </html>

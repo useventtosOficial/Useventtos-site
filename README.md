@@ -1,16 +1,21 @@
-# Useventtos - Modelo específico
+# Useventtos - Botões vinculados à Shopee
 
-Esta versão usa exatamente o layout aprovado como imagem principal do site.
+Versão com áreas clicáveis nos botões da imagem.
 
 ## Arquivos
 - index.html
 - useventtos-home.png
 - README.md
 
-## Como subir
-Suba todos os arquivos na raiz do GitHub, substituindo os antigos.
+## Música
+Dá para colocar música, mas o navegador bloqueia autoplay.
+Para usar música:
+1. Suba um arquivo chamado musica.mp3 na raiz.
+2. Abra o index.html.
+3. Remova o comentário da parte "Música opcional".
+4. O site mostrará o botão "Ativar som".
 
-GitHub Pages:
+## GitHub Pages
 - Deploy from a branch
 - main/principal
 - /root
