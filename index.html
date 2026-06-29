@@ -4,9 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Useventtos | Seu tênis sempre pronto para usar</title>
-  <meta name="description" content="Useventtos: cápsulas desodorizadoras reutilizáveis para tênis, com refil aromático e design exclusivo em impressão 3D." />
+  <title>Useventtos | Mini Sneaker Deodorizer</title>
+  <meta name="description" content="Useventtos: mini sneaker deodorizer com refil de espuminha 18mm, até 30 dias de frescor e design exclusivo produzido no Brasil." />
+  <meta name="theme-color" content="#0b0f0a" />
+  <meta property="og:title" content="Useventtos | Seu tênis sempre pronto para usar" />
+  <meta property="og:description" content="Mini Sneaker Deodorizer com refil aromático, design exclusivo e até 30 dias de frescor." />
+  <meta property="og:image" content="assets/hero-sneaker.jpg" />
 
+  <link rel="preload" as="image" href="assets/hero-sneaker.jpg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -14,164 +19,251 @@
   <div class="topbar">
     <span>Frete rápido para todo o Brasil</span>
     <span>Até 30 dias de frescor</span>
-    <span>Desenvolvido e produzido no Brasil 🇧🇷</span>
+    <span>Desenvolvido no Brasil 🇧🇷</span>
   </div>
 
-  <header class="header">
-    <a href="#" class="logo">USEVENTTOS</a>
+  <header class="header" id="header">
+    <a href="#" class="brand" aria-label="Useventtos">
+      <img src="assets/logo.png" alt="Useventtos" />
+      <span>USEVENTTOS</span>
+    </a>
 
     <nav>
       <a href="#produto">Produto</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#kits">Kits</a>
-      <a href="#contato">Contato</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#faq">FAQ</a>
     </nav>
 
-    <a class="buy-button" href="https://shopee.com.br/shop/1294719962">Comprar agora</a>
+    <a class="header-cta" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-content">
-        <span class="label">Pequeno por fora. Poderoso por dentro.</span>
-
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Mini Sneaker Deodorizer</span>
         <h1>Seu tênis sempre pronto para usar.</h1>
-
         <p>
-          Cápsulas desodorizadoras reutilizáveis com refil aromático,
-          criadas para eliminar odores e manter seus calçados mais frescos
-          por muito mais tempo.
+          Cápsulas desodorizadoras reutilizáveis em formato de mini sneaker,
+          com refil aromático de espuminha 18mm para manter seus calçados frescos por muito mais tempo.
         </p>
 
         <div class="actions">
-          <a class="primary" href="https://shopee.com.br/shop/1294719962">Comprar agora</a>
-          <a class="secondary" href="#como-funciona">Ver como funciona</a>
+          <a class="btn primary" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar na Shopee</a>
+          <a class="btn secondary" href="#como-funciona">Ver como funciona</a>
         </div>
 
-        <div class="benefits">
-          <div>
-            <strong>30 dias</strong>
-            <span>de frescor</span>
-          </div>
-          <div>
-            <strong>3D</strong>
-            <span>design exclusivo</span>
-          </div>
-          <div>
-            <strong>Refil</strong>
-            <span>substituível</span>
-          </div>
+        <div class="hero-metrics">
+          <div><strong>30 dias</strong><span>de frescor</span></div>
+          <div><strong>18mm</strong><span>refil interno</span></div>
+          <div><strong>3D</strong><span>design exclusivo</span></div>
         </div>
       </div>
 
-      <div class="hero-visual">
-        <div class="product-card">
-          <div class="shoe">
-            <div class="shoe-back"></div>
-            <div class="shoe-top"></div>
-            <div class="shoe-body">
-              <div class="cut cut-one"></div>
-              <div class="cut cut-two"></div>
-              <span class="venttos">venttos</span>
-            </div>
-            <div class="sole">Useventtos</div>
-            <div class="refill"></div>
-          </div>
+      <div class="hero-visual reveal delay">
+        <div class="orb"></div>
+        <img class="hero-product" src="assets/hero-sneaker.jpg" alt="Mini sneaker Useventtos branco em impressão 3D" />
+        <div class="floating-card card-one">
+          <strong>Refil substituível</strong>
+          <span>Prático para usar e trocar</span>
+        </div>
+        <div class="floating-card card-two">
+          <strong>Fórmula não tóxica</strong>
+          <span>Perfume suave</span>
         </div>
       </div>
     </section>
 
-    <section class="rhythm">
-      <div>
-        <h2>Perfeito para seu ritmo.</h2>
-        <p>Useventtos acompanha você em todos os momentos.</p>
+    <section class="strip">
+      <div>Elimina maus odores</div>
+      <div>Frescor duradouro</div>
+      <div>Embalagem reciclável</div>
+      <div>Produzido no Brasil</div>
+    </section>
+
+    <section id="produto" class="section product-section">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Produto real</span>
+        <h2>Pequeno por fora. Poderoso por dentro.</h2>
+        <p>
+          O Mini Sneaker Useventtos foi criado para entrar no tênis depois do uso e ajudar a neutralizar odores,
+          mantendo uma sensação de frescor no dia a dia.
+        </p>
       </div>
 
-      <div class="icons">
-        <span>Corrida</span>
-        <span>Academia</span>
-        <span>Futebol</span>
-        <span>Casual</span>
-        <span>Ciclismo</span>
-        <span>Dia a dia</span>
+      <div class="product-grid">
+        <article class="photo-card large reveal">
+          <img src="assets/sneaker-side.jpg" alt="Vista lateral do mini sneaker Useventtos" />
+          <div>
+            <h3>Aberturas em V</h3>
+            <p>Design pensado para circulação da fragrância e identidade visual da marca.</p>
+          </div>
+        </article>
+
+        <article class="feature-card reveal delay">
+          <span>01</span>
+          <h3>Reutilizável</h3>
+          <p>Use a cápsula novamente e substitua apenas o refil de espuminha.</p>
+        </article>
+
+        <article class="feature-card reveal delay-2">
+          <span>02</span>
+          <h3>Compacto</h3>
+          <p>Formato mini sneaker para caber dentro do calçado de forma prática.</p>
+        </article>
       </div>
     </section>
 
-    <section id="como-funciona" class="how">
-      <div class="section-title">
-        <span class="label">Como funciona</span>
+    <section id="como-funciona" class="section how">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Como funciona</span>
         <h2>Coloque. Deixe agir. Use de novo.</h2>
       </div>
 
       <div class="steps">
-        <article>
-          <strong>01</strong>
-          <h3>Coloque no tênis</h3>
-          <p>Insira a cápsula Useventtos dentro do calçado após o uso.</p>
+        <article class="reveal">
+          <strong>1</strong>
+          <h3>Abra o saquinho</h3>
+          <p>Retire os mini sneakers da embalagem Useventtos.</p>
         </article>
 
-        <article>
-          <strong>02</strong>
-          <h3>O refil atua</h3>
-          <p>O refil aromático libera fragrância e ajuda a reduzir odores.</p>
+        <article class="reveal delay">
+          <strong>2</strong>
+          <h3>Insira o refil</h3>
+          <p>Coloque o refil de espuminha 18mm dentro da cápsula.</p>
         </article>
 
-        <article>
-          <strong>03</strong>
-          <h3>Resultado</h3>
-          <p>Tênis mais fresco, pronto para o próximo uso.</p>
+        <article class="reveal delay-2">
+          <strong>3</strong>
+          <h3>Posicione no tênis</h3>
+          <p>Deixe agir após o uso para manter o calçado mais fresco.</p>
         </article>
       </div>
     </section>
 
-    <section id="kits" class="kits">
-      <div class="section-title">
-        <span class="label">Kits</span>
+    <section class="section packaging">
+      <div class="package-copy reveal">
+        <span class="eyebrow">Embalagem oficial</span>
+        <h2>Pronto para vender. Pronto para presentear.</h2>
+        <p>
+          A embalagem Useventtos reforça a experiência da marca, explica o modo de uso
+          e destaca os principais benefícios do produto.
+        </p>
+      </div>
+
+      <div class="package-images">
+        <img class="reveal" src="assets/package-front.jpg" alt="Frente da embalagem Useventtos" />
+        <img class="reveal delay" src="assets/package-back.jpg" alt="Verso da embalagem Useventtos com modo de usar" />
+      </div>
+    </section>
+
+    <section id="kits" class="section kits">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Kits</span>
         <h2>Escolha seu kit.</h2>
       </div>
 
-      <div class="cards">
-        <article>
+      <div class="kit-grid">
+        <article class="kit-card reveal">
+          <img src="assets/sneaker-front.jpg" alt="Mini sneaker branco Useventtos" />
           <span class="badge">Inicial</span>
           <h3>Starter</h3>
-          <p>2 cápsulas + 2 refis</p>
+          <p>2 mini sneakers + 2 refis de espuminha 18mm</p>
           <strong>R$ 49,90</strong>
-          <a href="https://shopee.com.br/shop/1294719962">Comprar</a>
+          <a href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar</a>
         </article>
 
-        <article class="highlight">
+        <article class="kit-card featured reveal delay">
+          <img src="assets/prototypes.jpg" alt="Mini sneakers Useventtos em três cores" />
           <span class="badge">Mais vendido</span>
-          <h3>Duo</h3>
-          <p>2 mini sneakers + 2 refis verdes</p>
+          <h3>Duo Useventtos</h3>
+          <p>Design exclusivo, embalagem oficial e refil aromático.</p>
           <strong>R$ 59,90</strong>
-          <a href="https://shopee.com.br/shop/1294719962">Comprar</a>
+          <a href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar</a>
         </article>
 
-        <article>
-          <span class="badge">Família</span>
-          <h3>Family</h3>
-          <p>4 cápsulas + 4 refis</p>
-          <strong>R$ 89,90</strong>
-          <a href="https://shopee.com.br/shop/1294719962">Comprar</a>
+        <article class="kit-card reveal delay-2">
+          <img src="assets/package-front.jpg" alt="Embalagem Useventtos" />
+          <span class="badge">Presenteável</span>
+          <h3>Pack Oficial</h3>
+          <p>Embalagem Useventtos com comunicação premium.</p>
+          <strong>Ver na loja</strong>
+          <a href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar</a>
         </article>
       </div>
     </section>
 
-    <section id="contato" class="cta">
-      <span class="label">Useventtos Oficial</span>
-      <h2>Seu tênis merece respirar.</h2>
-      <p>Acompanhe o lançamento, protótipos e novidades da marca.</p>
+    <section class="section story">
+      <div class="story-image reveal">
+        <img src="assets/prototypes.jpg" alt="Protótipos reais da Useventtos em vermelho, branco e preto" />
+      </div>
+
+      <div class="story-copy reveal delay">
+        <span class="eyebrow">Da ideia ao produto</span>
+        <h2>Produzido um a um em impressão 3D.</h2>
+        <p>
+          A Useventtos nasceu da união entre design, funcionalidade e fabricação 3D.
+          Cada protótipo ajudou a evoluir o formato, encaixe e acabamento do mini sneaker.
+        </p>
+      </div>
+    </section>
+
+    <section id="galeria" class="section gallery">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Galeria</span>
+        <h2>Detalhes reais do protótipo.</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <img class="reveal" src="assets/sneaker-front.jpg" alt="Frente do mini sneaker Useventtos" />
+        <img class="reveal delay" src="assets/sneaker-side.jpg" alt="Lateral do mini sneaker Useventtos" />
+        <img class="reveal delay-2" src="assets/sneaker-back.jpg" alt="Traseira do mini sneaker Useventtos" />
+        <img class="reveal" src="assets/sneaker-red.jpg" alt="Mini sneaker vermelho Useventtos" />
+      </div>
+    </section>
+
+    <section id="faq" class="section faq">
+      <div class="section-heading reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Dúvidas rápidas.</h2>
+      </div>
+
+      <div class="faq-list">
+        <details open>
+          <summary>Quanto tempo dura o frescor?</summary>
+          <p>A comunicação da embalagem destaca até 30 dias de frescor, dependendo do uso, ambiente e troca do refil.</p>
+        </details>
+
+        <details>
+          <summary>O produto é reutilizável?</summary>
+          <p>Sim. A cápsula mini sneaker pode ser reutilizada, substituindo o refil periodicamente.</p>
+        </details>
+
+        <details>
+          <summary>Onde posso usar?</summary>
+          <p>É ideal para tênis, mas também pode ser usado em bolsas, mochilas, roupas, armários e itens de viagem.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cta-final">
+      <img src="assets/logo.png" alt="Logo Useventtos" />
+      <span class="eyebrow">Useventtos Oficial</span>
+      <h2>Sinta o frescor. Viva o movimento.</h2>
+      <p>Conheça a linha oficial e acompanhe os próximos lançamentos da marca.</p>
 
       <div class="actions center">
-        <a class="primary" href="https://shopee.com.br/shop/1294719962">Comprar na Shopee</a>
-        <a class="secondary" href="https://www.instagram.com/useventtos">Instagram</a>
+        <a class="btn primary" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
+        <a class="btn secondary" href="https://www.instagram.com/useventtos" target="_blank" rel="noopener">Instagram</a>
       </div>
     </section>
   </main>
 
   <footer>
     <strong>USEVENTTOS</strong>
-    <span>© 2026 Useventtos. Produzido no Brasil.</span>
+    <span>© 2026 Useventtos. Desenvolvido no Brasil.</span>
+    <a href="https://www.instagram.com/useventtos" target="_blank" rel="noopener">@useventtos</a>
   </footer>
 
   <script src="script.js"></script>

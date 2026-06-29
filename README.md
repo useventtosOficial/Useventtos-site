@@ -1,29 +1,26 @@
-# Useventtos — Parte 1 Home Premium
+# Useventtos Site — Premium Final
 
-Esta é a primeira entrega do site oficial da Useventtos.
+Site oficial da Useventtos com imagens reais dos protótipos, embalagem oficial e logo.
 
-## Arquivos
+## Arquivos para subir no GitHub
+
+Suba todos estes itens na raiz do repositório:
 
 - index.html
 - style.css
 - script.js
+- README.md
+- pasta assets
 
-## Como subir no GitHub corretamente
+## Configuração correta do GitHub Pages
 
-1. Abra o repositório no GitHub.
-2. Apague o arquivo .zip antigo, se existir.
-3. Clique em Add file > Upload files.
-4. Envie os arquivos separados:
-   - index.html
-   - style.css
-   - script.js
-   - README.md
-5. Vá em Settings > Pages.
-6. Source: Deploy from a branch.
-7. Branch: main / root.
-8. Aguarde o GitHub gerar o link.
+Settings > Pages
 
-## Links já configurados
+- Source: Deploy from a branch
+- Branch: main ou principal
+- Folder: / (root) ou / (raiz)
+
+## Links configurados
 
 - Shopee: https://shopee.com.br/shop/1294719962
 - Instagram: https://www.instagram.com/useventtos

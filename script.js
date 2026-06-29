@@ -1,10 +1,1 @@
-const card = document.querySelector('.product-card');
-
-document.addEventListener('mousemove', (event) => {
-  if (!card) return;
-
-  const x = (event.clientX / window.innerWidth - 0.5) * 10;
-  const y = (event.clientY / window.innerHeight - 0.5) * 10;
-
-  card.style.transform = `translateY(${y}px) rotate(${x * 0.2}deg)`;
-});
+const header=document.getElementById('header');window.addEventListener('scroll',()=>{const o=Math.min(window.scrollY/400,1);header.style.boxShadow=`0 14px 40px rgba(0,0,0,${o*.10})`});const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:.14});document.querySelectorAll('.reveal').forEach((el)=>observer.observe(el));const heroProduct=document.querySelector('.hero-product');if(heroProduct){window.addEventListener('mousemove',(event)=>{if(window.innerWidth<900)return;const x=(event.clientX/window.innerWidth-.5)*10;const y=(event.clientY/window.innerHeight-.5)*8;heroProduct.style.transform=`translate(${x}px, ${y}px) rotate(${-2+x*.08}deg)`})}
