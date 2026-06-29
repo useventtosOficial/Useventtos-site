@@ -15,11 +15,34 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     html{background:#050705}
-    body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overflow-x:auto}
-    .wrap{position:relative;width:100%;max-width:1440px;margin:0 auto;background:#050705}
-    .site-image{width:100%;height:auto;display:block;user-select:none}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#050705;
+      color:#fff;
+      overflow-x:auto;
+    }
+    .wrap{
+      position:relative;
+      width:100%;
+      max-width:1440px;
+      margin:0 auto;
+      background:#050705;
+    }
+    .site-image{
+      width:100%;
+      height:auto;
+      display:block;
+      user-select:none;
+    }
 
-    .hotspot{position:absolute;z-index:10;display:block;border-radius:999px;cursor:pointer}
+    .hotspot{
+      position:absolute;
+      z-index:10;
+      display:block;
+      border-radius:999px;
+      cursor:pointer;
+    }
+
     .buy-header{left:81%;top:3.7%;width:15.5%;height:3.2%}
     .buy-hero{left:4.5%;top:26.1%;width:19.7%;height:3.5%}
     .buy-kit-1{left:5.1%;top:66.9%;width:17.2%;height:2.6%}
@@ -27,164 +50,173 @@
     .buy-footer{left:78.2%;top:94.1%;width:17.5%;height:3.1%}
 
     .floating-buy{
-      position:fixed;right:22px;bottom:22px;z-index:30;
-      background:#a8ff00;color:#111;text-decoration:none;font-weight:900;
-      padding:15px 24px;border-radius:999px;box-shadow:0 18px 50px rgba(168,255,0,.25);
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:30;
+      background:#a8ff00;
+      color:#111;
+      text-decoration:none;
+      font-weight:900;
+      padding:15px 24px;
+      border-radius:999px;
+      box-shadow:0 18px 50px rgba(168,255,0,.25);
       transition:.2s ease;
     }
     .floating-buy:hover{transform:translateY(-3px)}
 
-    /* POPUP USEVENTTOS */
     .popup-overlay{
-      position:fixed;inset:0;z-index:100;
+      position:fixed;
+      inset:0;
+      z-index:100;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:22px;
       background:rgba(0,0,0,.72);
-      display:flex;align-items:center;justify-content:center;
-      padding:24px;
-      backdrop-filter:blur(10px);
-      opacity:0;visibility:hidden;
+      backdrop-filter:blur(12px);
+      opacity:0;
+      visibility:hidden;
       transition:.35s ease;
     }
-    .popup-overlay.show{opacity:1;visibility:visible}
-    .popup-card{
+    .popup-overlay.show{
+      opacity:1;
+      visibility:visible;
+    }
+    .popup-box{
       position:relative;
-      width:min(92vw,620px);
+      width:min(92vw,1100px);
+      border-radius:26px;
       overflow:hidden;
-      border-radius:34px;
-      background:
-        radial-gradient(circle at 78% 18%,rgba(168,255,0,.22),transparent 26%),
-        linear-gradient(145deg,#10150f 0%,#050705 52%,#020302 100%);
-      border:1px solid rgba(168,255,0,.32);
-      box-shadow:0 35px 120px rgba(0,0,0,.65),0 0 80px rgba(168,255,0,.12);
-      padding:42px 38px 36px;
-      text-align:center;
-      transform:translateY(18px) scale(.96);
+      box-shadow:
+        0 40px 140px rgba(0,0,0,.78),
+        0 0 90px rgba(168,255,0,.16);
+      border:1px solid rgba(168,255,0,.42);
+      transform:translateY(18px) scale(.965);
       transition:.35s ease;
+      background:#050705;
     }
-    .popup-overlay.show .popup-card{transform:translateY(0) scale(1)}
-    .popup-card:before{
-      content:"";
-      position:absolute;inset:-2px;
-      background:linear-gradient(120deg,transparent,rgba(168,255,0,.24),transparent);
-      opacity:.55;
+    .popup-overlay.show .popup-box{
+      transform:translateY(0) scale(1);
+    }
+    .popup-img{
+      width:100%;
+      height:auto;
+      display:block;
+      user-select:none;
       pointer-events:none;
     }
     .popup-close{
-      position:absolute;top:18px;right:18px;z-index:2;
-      width:40px;height:40px;border-radius:50%;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.06);
-      color:white;font-size:24px;line-height:1;
+      position:absolute;
+      right:3.1%;
+      top:4.7%;
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.42);
+      background:rgba(0,0,0,.32);
+      color:#fff;
+      font-size:34px;
+      line-height:1;
       cursor:pointer;
-    }
-    .popup-logo{
-      width:94px;height:94px;border-radius:50%;object-fit:cover;
-      margin:0 auto 18px;
-      box-shadow:0 0 54px rgba(168,255,0,.28);
-    }
-    .popup-kicker{
-      color:#a8ff00;
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      font-size:12px;
-      font-weight:900;
-      margin-bottom:14px;
-    }
-    .popup-card h2{
-      font-size:clamp(34px,6vw,56px);
-      line-height:.9;
-      letter-spacing:-.055em;
-      margin-bottom:18px;
-    }
-    .popup-card p{
-      color:#dce4d7;
-      font-size:18px;
-      line-height:1.55;
-      max-width:500px;
-      margin:0 auto;
-    }
-    .popup-slogan{
-      display:block;
-      margin-top:20px;
-      color:#a8ff00;
-      font-size:22px;
-      font-weight:950;
-      letter-spacing:-.02em;
-    }
-    .popup-actions{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      margin-top:28px;
-      flex-wrap:wrap;
-      position:relative;
-      z-index:2;
-    }
-    .popup-btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      min-width:170px;
-      padding:15px 22px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:950;
+      z-index:3;
+      backdrop-filter:blur(8px);
       transition:.2s ease;
     }
-    .popup-btn.primary{background:#a8ff00;color:#111}
-    .popup-btn.secondary{border:1px solid rgba(255,255,255,.18);color:white;background:rgba(255,255,255,.06)}
-    .popup-btn:hover{transform:translateY(-2px)}
-    .popup-timer{
-      margin-top:20px;
-      color:#9aa496;
-      font-size:12px;
-      position:relative;
-      z-index:2;
+    .popup-close:hover{
+      transform:scale(1.06);
+      border-color:#a8ff00;
+      color:#a8ff00;
     }
+
+    /* Botão invisível em cima do botão "Ver o site" da arte */
+    .popup-see-site{
+      position:absolute;
+      left:36.6%;
+      top:80.7%;
+      width:26.8%;
+      height:7.2%;
+      border-radius:999px;
+      z-index:3;
+      cursor:pointer;
+      background:transparent;
+      border:0;
+    }
+
     .popup-progress{
-      position:absolute;left:0;bottom:0;height:4px;width:100%;
-      background:rgba(168,255,0,.2);
+      position:absolute;
+      left:0;
+      bottom:0;
+      height:4px;
+      width:100%;
+      background:rgba(168,255,0,.14);
+      z-index:4;
     }
     .popup-progress span{
-      display:block;height:100%;width:100%;
+      display:block;
+      width:100%;
+      height:100%;
       background:#a8ff00;
       transform-origin:left center;
       animation:timerbar 25s linear forwards;
     }
-    @keyframes timerbar{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+    @keyframes timerbar{
+      from{transform:scaleX(1)}
+      to{transform:scaleX(0)}
+    }
+
+    .green-glow{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 24% 50%,rgba(168,255,0,.16),transparent 22%),
+        radial-gradient(circle at 40% 36%,rgba(168,255,0,.10),transparent 13%);
+      mix-blend-mode:screen;
+      animation:glowPulse 3.5s ease-in-out infinite alternate;
+      z-index:2;
+    }
+    @keyframes glowPulse{
+      from{opacity:.35}
+      to{opacity:.72}
+    }
 
     @media(max-width:768px){
-      .wrap{width:1440px;max-width:none}
-      .floating-buy{right:14px;bottom:14px;padding:14px 20px}
-      .popup-card{padding:34px 24px 30px;border-radius:28px}
-      .popup-logo{width:78px;height:78px}
-      .popup-actions{flex-direction:column}
-      .popup-btn{width:100%}
+      .wrap{
+        width:1440px;
+        max-width:none;
+      }
+      .floating-buy{
+        right:14px;
+        bottom:14px;
+        padding:14px 20px;
+      }
+      .popup-box{
+        width:96vw;
+        border-radius:18px;
+      }
+      .popup-close{
+        width:42px;
+        height:42px;
+        font-size:28px;
+      }
+      .popup-see-site{
+        left:33%;
+        top:80.2%;
+        width:34%;
+        height:7.5%;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="popup-overlay" id="welcomePopup" aria-modal="true" role="dialog">
-    <div class="popup-card">
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <img class="popup-img" src="popup-useventtos.png" alt="Bem-vindo à Useventtos" />
+      <div class="green-glow"></div>
       <button class="popup-close" id="closePopup" aria-label="Fechar popup">×</button>
-
-      <img class="popup-logo" src="logo.png" alt="Useventtos" />
-
-      <div class="popup-kicker">Bem-vindo à Useventtos</div>
-
-      <h2>Estamos prestes a lançar um produto incrível.</h2>
-
-      <p>
-        Um novo jeito de manter seus tênis sempre prontos para usar está chegando.
-        Design, frescor e movimento em um produto único.
-      </p>
-
-      <strong class="popup-slogan">“Sinta o frescor. Viva o movimento!”</strong>
-
-      <div class="popup-actions">
-        <a class="popup-btn primary" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Conhecer na Shopee</a>
-        <button class="popup-btn secondary" id="continuePopup" type="button">Ver o site</button>
-      </div>
-
-      <div class="popup-timer">Esta mensagem fecha automaticamente em 25 segundos.</div>
+      <button class="popup-see-site" id="seeSite" aria-label="Ver o site"></button>
       <div class="popup-progress"><span></span></div>
     </div>
   </div>
@@ -202,21 +234,21 @@
   <a class="floating-buy" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
 
   <script>
-    const popup = document.getElementById("welcomePopup");
+    const popup = document.getElementById("popup");
     const closePopup = document.getElementById("closePopup");
-    const continuePopup = document.getElementById("continuePopup");
+    const seeSite = document.getElementById("seeSite");
 
     function hidePopup(){
       popup.classList.remove("show");
     }
 
     window.addEventListener("load", () => {
-      setTimeout(() => popup.classList.add("show"), 600);
-      setTimeout(hidePopup, 25600);
+      setTimeout(() => popup.classList.add("show"), 500);
+      setTimeout(hidePopup, 25500);
     });
 
     closePopup.addEventListener("click", hidePopup);
-    continuePopup.addEventListener("click", hidePopup);
+    seeSite.addEventListener("click", hidePopup);
 
     popup.addEventListener("click", (event) => {
       if(event.target === popup) hidePopup();

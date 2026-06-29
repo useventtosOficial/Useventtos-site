@@ -1,15 +1,16 @@
-# Useventtos - Popup de lançamento
+# Useventtos - Popup Oficial
 
-Versão com:
-- Botões vinculados à Shopee
-- Popup premium de boas-vindas
-- Fechamento manual no X
-- Fechamento automático após 25 segundos
+Versão aprovada com:
+- Popup visual oficial Useventtos
+- Botão Ver o site
+- Fechamento no X
+- Fechamento automático em 25 segundos
+- Botões do site vinculados à Shopee
 
 ## Arquivos
 - index.html
 - useventtos-home.png
-- logo.png
+- popup-useventtos.png
 - README.md
 
 Suba todos os arquivos na raiz do GitHub, substituindo os antigos.
