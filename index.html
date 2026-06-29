@@ -7,7 +7,6 @@
   <title>Useventtos | Mini Sneaker Deodorizer</title>
   <meta name="description" content="Useventtos Mini Sneaker Deodorizer. Seu tênis sempre pronto para usar." />
   <meta name="theme-color" content="#050705" />
-
   <meta property="og:title" content="Useventtos | Seu tênis sempre pronto para usar" />
   <meta property="og:description" content="Mini Sneaker Deodorizer com refil aromático e até 30 dias de frescor." />
   <meta property="og:image" content="useventtos-home.png" />
@@ -72,7 +71,7 @@
       align-items:center;
       justify-content:center;
       padding:22px;
-      background:rgba(0,0,0,.72);
+      background:rgba(0,0,0,.74);
       backdrop-filter:blur(12px);
       opacity:0;
       visibility:hidden;
@@ -82,18 +81,17 @@
       opacity:1;
       visibility:visible;
     }
+
+    /* Sem borda externa para não parecer 2 popups */
     .popup-box{
       position:relative;
       width:min(92vw,1100px);
-      border-radius:26px;
+      border-radius:24px;
       overflow:hidden;
-      box-shadow:
-        0 40px 140px rgba(0,0,0,.78),
-        0 0 90px rgba(168,255,0,.16);
-      border:1px solid rgba(168,255,0,.42);
+      background:transparent;
+      box-shadow:0 40px 140px rgba(0,0,0,.78);
       transform:translateY(24px) scale(.95);
       transition:transform .42s cubic-bezier(.16,1,.3,1);
-      background:#050705;
       isolation:isolate;
     }
     .popup-overlay.show .popup-box{
@@ -109,7 +107,7 @@
       z-index:1;
     }
 
-    /* X invisível por cima do X já existente na arte */
+    /* X invisível por cima do X da própria arte */
     .popup-close{
       position:absolute;
       right:3.6%;
@@ -120,10 +118,9 @@
       border:0;
       background:transparent;
       cursor:pointer;
-      z-index:6;
+      z-index:8;
     }
 
-    /* Botão invisível por cima do "Ver o site" da arte */
     .popup-see-site{
       position:absolute;
       left:36.6%;
@@ -131,7 +128,7 @@
       width:26.8%;
       height:7.2%;
       border-radius:999px;
-      z-index:6;
+      z-index:8;
       cursor:pointer;
       background:transparent;
       border:0;
@@ -139,12 +136,14 @@
 
     .popup-progress{
       position:absolute;
-      left:0;
-      bottom:0;
-      height:3px;
-      width:100%;
-      background:rgba(168,255,0,.12);
+      left:11.6%;
+      bottom:8.2%;
+      height:2px;
+      width:76.8%;
+      background:rgba(168,255,0,.18);
       z-index:7;
+      border-radius:999px;
+      overflow:hidden;
     }
     .popup-progress span{
       display:block;
@@ -153,51 +152,72 @@
       background:#a8ff00;
       transform-origin:left center;
       animation:timerbar 25s linear forwards;
-      box-shadow:0 0 14px rgba(168,255,0,.9);
+      box-shadow:0 0 14px rgba(168,255,0,.95);
     }
     @keyframes timerbar{
       from{transform:scaleX(1)}
       to{transform:scaleX(0)}
     }
 
-    /* Fumaça/brilho animado por cima do popup */
-    .animated-smoke{
+    /* Animação real e mais visível */
+    .smoke-layer{
       position:absolute;
-      inset:-20%;
-      z-index:2;
+      left:-5%;
+      top:-8%;
+      width:62%;
+      height:112%;
+      z-index:3;
       pointer-events:none;
-      background:
-        radial-gradient(circle at 24% 44%, rgba(168,255,0,.16), transparent 18%),
-        radial-gradient(circle at 31% 61%, rgba(168,255,0,.12), transparent 16%),
-        radial-gradient(circle at 16% 22%, rgba(168,255,0,.12), transparent 20%),
-        radial-gradient(circle at 43% 36%, rgba(168,255,0,.08), transparent 14%);
+      opacity:.55;
+      filter:blur(10px);
       mix-blend-mode:screen;
-      filter:blur(18px);
-      opacity:.42;
-      animation:smokeMove 8s ease-in-out infinite alternate;
+      background:
+        radial-gradient(ellipse at 24% 22%, rgba(168,255,0,.28), transparent 30%),
+        radial-gradient(ellipse at 42% 44%, rgba(168,255,0,.20), transparent 28%),
+        radial-gradient(ellipse at 16% 68%, rgba(168,255,0,.18), transparent 32%);
+      animation:smokeDrift 5.8s ease-in-out infinite alternate;
     }
-    @keyframes smokeMove{
-      from{transform:translate3d(-18px,12px,0) scale(1);opacity:.30}
-      to{transform:translate3d(22px,-16px,0) scale(1.08);opacity:.58}
+    .smoke-layer:before,
+    .smoke-layer:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(ellipse at 32% 36%, rgba(210,255,126,.22), transparent 24%),
+        radial-gradient(ellipse at 56% 62%, rgba(168,255,0,.16), transparent 22%);
+      filter:blur(18px);
+      animation:smokeDrift2 7s ease-in-out infinite alternate;
+    }
+    .smoke-layer:after{
+      opacity:.65;
+      animation-duration:9s;
+      animation-direction:alternate-reverse;
+    }
+    @keyframes smokeDrift{
+      from{transform:translate(-22px,18px) scale(1) rotate(-2deg);opacity:.34}
+      to{transform:translate(28px,-18px) scale(1.12) rotate(3deg);opacity:.68}
+    }
+    @keyframes smokeDrift2{
+      from{transform:translate(10px,-8px) scale(1.06)}
+      to{transform:translate(-18px,16px) scale(1.18)}
     }
 
-    /* Bolinhas/brilhos flutuantes discretos */
     .orb{
       position:absolute;
-      z-index:3;
+      z-index:4;
       border-radius:50%;
       pointer-events:none;
-      background:radial-gradient(circle at 35% 30%, #d8ff7a, #8bd600 45%, rgba(77,133,0,.35) 72%);
-      box-shadow:0 0 28px rgba(168,255,0,.35);
-      opacity:.28;
-      animation:floatOrb 4.8s ease-in-out infinite alternate;
+      background:radial-gradient(circle at 35% 30%, #e7ff9b, #a8ff00 42%, rgba(77,133,0,.45) 75%);
+      box-shadow:0 0 28px rgba(168,255,0,.55);
+      opacity:.50;
+      animation:floatOrb 3.8s ease-in-out infinite alternate;
     }
     .orb.one{width:34px;height:34px;left:42%;top:16%;animation-delay:.2s}
     .orb.two{width:22px;height:22px;left:28%;top:71%;animation-delay:1s}
     .orb.three{width:18px;height:18px;left:47%;top:68%;animation-delay:1.8s}
     @keyframes floatOrb{
-      from{transform:translateY(0) translateX(0)}
-      to{transform:translateY(-12px) translateX(8px)}
+      from{transform:translateY(0) translateX(0) scale(1)}
+      to{transform:translateY(-16px) translateX(10px) scale(1.08)}
     }
 
     @media(max-width:768px){
@@ -234,15 +254,12 @@
   <div class="popup-overlay" id="popup">
     <div class="popup-box">
       <img class="popup-img" src="popup-useventtos.png" alt="Bem-vindo à Useventtos" />
-
-      <div class="animated-smoke"></div>
+      <div class="smoke-layer"></div>
       <span class="orb one"></span>
       <span class="orb two"></span>
       <span class="orb three"></span>
-
       <button class="popup-close" id="closePopup" aria-label="Fechar popup"></button>
       <button class="popup-see-site" id="seeSite" aria-label="Ver o site"></button>
-
       <div class="popup-progress"><span></span></div>
     </div>
   </div>

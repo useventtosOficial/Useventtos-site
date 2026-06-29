@@ -1,19 +1,11 @@
-# Useventtos - Popup Oficial V2 Ajustado
+# Useventtos - Popup Oficial V3
 
-Ajustes aplicados:
-- Removido X duplicado
-- X da própria arte fica clicável
-- Botão Ver o site fecha o popup
-- Fechamento automático em 25 segundos
-- Barra de progresso mais fina
-- Fumaça/brilho verde com animação suave
-- Bolinhas/brilhos flutuando discretamente
-- Botões do site vinculados à Shopee
+Correções:
+- Removida a moldura externa que parecia segundo popup
+- Mantido apenas o X visual da arte como área clicável
+- Animação de fumaça verde mais visível
+- Bolinhas/brilhos com flutuação mais perceptível
+- Barra de progresso fina
+- Botões da página vinculados à Shopee
 
-## Arquivos
-- index.html
-- useventtos-home.png
-- popup-useventtos.png
-- README.md
-
-Suba todos os arquivos na raiz do GitHub, substituindo os antigos.
+Suba todos os arquivos na raiz do GitHub.
