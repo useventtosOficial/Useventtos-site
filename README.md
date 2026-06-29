@@ -1,18 +1,5 @@
-# Useventtos Studio Update
+# Useventtos Premium Clean V3
 
-Atualização premium do site com imagem studio/composite no hero e fotos reais na galeria.
+Nova versão do site com header preto, logo maior e nome USEVENTTOS em destaque.
 
-Suba todos os arquivos na raiz do GitHub, substituindo os antigos.
-
-Arquivos principais:
-- index.html
-- style.css
-- script.js
-- hero-studio.png
-- logo.png
-- demais imagens .jpg
-
-GitHub Pages:
-- Deploy from a branch
-- main/principal
-- /root
+Suba todos os arquivos na raiz do GitHub Pages.
