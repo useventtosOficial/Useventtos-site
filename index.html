@@ -42,7 +42,6 @@
       border-radius:999px;
       cursor:pointer;
     }
-
     .buy-header{left:81%;top:3.7%;width:15.5%;height:3.2%}
     .buy-hero{left:4.5%;top:26.1%;width:19.7%;height:3.5%}
     .buy-kit-1{left:5.1%;top:66.9%;width:17.2%;height:2.6%}
@@ -77,7 +76,7 @@
       backdrop-filter:blur(12px);
       opacity:0;
       visibility:hidden;
-      transition:.35s ease;
+      transition:opacity .38s ease, visibility .38s ease;
     }
     .popup-overlay.show{
       opacity:1;
@@ -92,9 +91,10 @@
         0 40px 140px rgba(0,0,0,.78),
         0 0 90px rgba(168,255,0,.16);
       border:1px solid rgba(168,255,0,.42);
-      transform:translateY(18px) scale(.965);
-      transition:.35s ease;
+      transform:translateY(24px) scale(.95);
+      transition:transform .42s cubic-bezier(.16,1,.3,1);
       background:#050705;
+      isolation:isolate;
     }
     .popup-overlay.show .popup-box{
       transform:translateY(0) scale(1);
@@ -105,31 +105,25 @@
       display:block;
       user-select:none;
       pointer-events:none;
+      position:relative;
+      z-index:1;
     }
+
+    /* X invisível por cima do X já existente na arte */
     .popup-close{
       position:absolute;
-      right:3.1%;
-      top:4.7%;
+      right:3.6%;
+      top:5.8%;
       width:52px;
       height:52px;
       border-radius:50%;
-      border:1px solid rgba(255,255,255,.42);
-      background:rgba(0,0,0,.32);
-      color:#fff;
-      font-size:34px;
-      line-height:1;
+      border:0;
+      background:transparent;
       cursor:pointer;
-      z-index:3;
-      backdrop-filter:blur(8px);
-      transition:.2s ease;
-    }
-    .popup-close:hover{
-      transform:scale(1.06);
-      border-color:#a8ff00;
-      color:#a8ff00;
+      z-index:6;
     }
 
-    /* Botão invisível em cima do botão "Ver o site" da arte */
+    /* Botão invisível por cima do "Ver o site" da arte */
     .popup-see-site{
       position:absolute;
       left:36.6%;
@@ -137,7 +131,7 @@
       width:26.8%;
       height:7.2%;
       border-radius:999px;
-      z-index:3;
+      z-index:6;
       cursor:pointer;
       background:transparent;
       border:0;
@@ -147,10 +141,10 @@
       position:absolute;
       left:0;
       bottom:0;
-      height:4px;
+      height:3px;
       width:100%;
-      background:rgba(168,255,0,.14);
-      z-index:4;
+      background:rgba(168,255,0,.12);
+      z-index:7;
     }
     .popup-progress span{
       display:block;
@@ -159,26 +153,51 @@
       background:#a8ff00;
       transform-origin:left center;
       animation:timerbar 25s linear forwards;
+      box-shadow:0 0 14px rgba(168,255,0,.9);
     }
     @keyframes timerbar{
       from{transform:scaleX(1)}
       to{transform:scaleX(0)}
     }
 
-    .green-glow{
+    /* Fumaça/brilho animado por cima do popup */
+    .animated-smoke{
       position:absolute;
-      inset:0;
+      inset:-20%;
+      z-index:2;
       pointer-events:none;
       background:
-        radial-gradient(circle at 24% 50%,rgba(168,255,0,.16),transparent 22%),
-        radial-gradient(circle at 40% 36%,rgba(168,255,0,.10),transparent 13%);
+        radial-gradient(circle at 24% 44%, rgba(168,255,0,.16), transparent 18%),
+        radial-gradient(circle at 31% 61%, rgba(168,255,0,.12), transparent 16%),
+        radial-gradient(circle at 16% 22%, rgba(168,255,0,.12), transparent 20%),
+        radial-gradient(circle at 43% 36%, rgba(168,255,0,.08), transparent 14%);
       mix-blend-mode:screen;
-      animation:glowPulse 3.5s ease-in-out infinite alternate;
-      z-index:2;
+      filter:blur(18px);
+      opacity:.42;
+      animation:smokeMove 8s ease-in-out infinite alternate;
     }
-    @keyframes glowPulse{
-      from{opacity:.35}
-      to{opacity:.72}
+    @keyframes smokeMove{
+      from{transform:translate3d(-18px,12px,0) scale(1);opacity:.30}
+      to{transform:translate3d(22px,-16px,0) scale(1.08);opacity:.58}
+    }
+
+    /* Bolinhas/brilhos flutuantes discretos */
+    .orb{
+      position:absolute;
+      z-index:3;
+      border-radius:50%;
+      pointer-events:none;
+      background:radial-gradient(circle at 35% 30%, #d8ff7a, #8bd600 45%, rgba(77,133,0,.35) 72%);
+      box-shadow:0 0 28px rgba(168,255,0,.35);
+      opacity:.28;
+      animation:floatOrb 4.8s ease-in-out infinite alternate;
+    }
+    .orb.one{width:34px;height:34px;left:42%;top:16%;animation-delay:.2s}
+    .orb.two{width:22px;height:22px;left:28%;top:71%;animation-delay:1s}
+    .orb.three{width:18px;height:18px;left:47%;top:68%;animation-delay:1.8s}
+    @keyframes floatOrb{
+      from{transform:translateY(0) translateX(0)}
+      to{transform:translateY(-12px) translateX(8px)}
     }
 
     @media(max-width:768px){
@@ -196,9 +215,10 @@
         border-radius:18px;
       }
       .popup-close{
-        width:42px;
-        height:42px;
-        font-size:28px;
+        right:3.3%;
+        top:4.5%;
+        width:44px;
+        height:44px;
       }
       .popup-see-site{
         left:33%;
@@ -214,9 +234,15 @@
   <div class="popup-overlay" id="popup">
     <div class="popup-box">
       <img class="popup-img" src="popup-useventtos.png" alt="Bem-vindo à Useventtos" />
-      <div class="green-glow"></div>
-      <button class="popup-close" id="closePopup" aria-label="Fechar popup">×</button>
+
+      <div class="animated-smoke"></div>
+      <span class="orb one"></span>
+      <span class="orb two"></span>
+      <span class="orb three"></span>
+
+      <button class="popup-close" id="closePopup" aria-label="Fechar popup"></button>
       <button class="popup-see-site" id="seeSite" aria-label="Ver o site"></button>
+
       <div class="popup-progress"><span></span></div>
     </div>
   </div>

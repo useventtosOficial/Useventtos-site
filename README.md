@@ -1,10 +1,13 @@
-# Useventtos - Popup Oficial
+# Useventtos - Popup Oficial V2 Ajustado
 
-Versão aprovada com:
-- Popup visual oficial Useventtos
-- Botão Ver o site
-- Fechamento no X
+Ajustes aplicados:
+- Removido X duplicado
+- X da própria arte fica clicável
+- Botão Ver o site fecha o popup
 - Fechamento automático em 25 segundos
+- Barra de progresso mais fina
+- Fumaça/brilho verde com animação suave
+- Bolinhas/brilhos flutuando discretamente
 - Botões do site vinculados à Shopee
 
 ## Arquivos
