@@ -1,21 +1,15 @@
-# Useventtos - Botões vinculados à Shopee
+# Useventtos - Popup de lançamento
 
-Versão com áreas clicáveis nos botões da imagem.
+Versão com:
+- Botões vinculados à Shopee
+- Popup premium de boas-vindas
+- Fechamento manual no X
+- Fechamento automático após 25 segundos
 
 ## Arquivos
 - index.html
 - useventtos-home.png
+- logo.png
 - README.md
 
-## Música
-Dá para colocar música, mas o navegador bloqueia autoplay.
-Para usar música:
-1. Suba um arquivo chamado musica.mp3 na raiz.
-2. Abra o index.html.
-3. Remova o comentário da parte "Música opcional".
-4. O site mostrará o botão "Ativar som".
-
-## GitHub Pages
-- Deploy from a branch
-- main/principal
-- /root
+Suba todos os arquivos na raiz do GitHub, substituindo os antigos.
