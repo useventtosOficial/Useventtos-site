@@ -1,9 +1,10 @@
-# Useventtos V2.0 Premium
+# Useventtos Site Final
 
-Site oficial Useventtos pronto para GitHub Pages.
+Arquivos sem acentos e sem espaços. Pronto para GitHub Pages.
 
-Suba todos os arquivos deste pacote na raiz do repositório.
+Suba todos os arquivos na raiz do repositório.
 
-Nomes sem acentos, sem espaços e sem caracteres especiais para evitar erro 404 no GitHub Pages.
-
-Configuração: Settings > Pages > Deploy from branch > principal/main > / root.
+GitHub Pages:
+- Deploy from a branch
+- main/principal
+- /root ou /raiz
