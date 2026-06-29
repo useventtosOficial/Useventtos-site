@@ -1,26 +1,30 @@
-# Useventtos Site — Premium Final
+# Useventtos Site
 
-Site oficial da Useventtos com imagens reais dos protótipos, embalagem oficial e logo.
+Versão premium sem pasta assets.
 
-## Arquivos para subir no GitHub
+## Subir no GitHub
 
-Suba todos estes itens na raiz do repositório:
+Substitua estes arquivos na raiz do repositório:
 
 - index.html
 - style.css
 - script.js
 - README.md
-- pasta assets
 
-## Configuração correta do GitHub Pages
+As imagens devem continuar na raiz com estes nomes:
 
-Settings > Pages
+- herói-tênis.jpg
+- logo.png
+- pacote-frente.jpg
+- pacote-traseiro.jpg
+- protótipos.jpg
+- tênis-frente.jpg
+- tênis-traseiro.jpg
+- tênis-vermelho.jpg
+- lado do tênis.jpg
 
-- Source: Deploy from a branch
-- Branch: main ou principal
-- Folder: / (root) ou / (raiz)
+## GitHub Pages
 
-## Links configurados
-
-- Shopee: https://shopee.com.br/shop/1294719962
-- Instagram: https://www.instagram.com/useventtos
+Configuração:
+- Branch: principal/main
+- Pasta: / (raiz)
