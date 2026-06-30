@@ -1,14 +1,18 @@
-# Useventtos - Final com imagem anexada + popup
+# Useventtos - Oficial GitHub Final
 
-Versão criada usando exatamente a imagem anexada pelo usuário como página principal.
+Arquivos:
+- index.html
+- useventtos-page.png
+- popup-useventtos.png
+- README.md
 
 Inclui:
-- Página principal pela imagem anexada
-- Popup aprovado funcionando
-- Fumaça, partículas e bolinhas animadas no popup
-- Botão Ver o site
-- X fechar funcionando
-- Fechamento automático em 25s
-- Botões da página vinculados à Shopee
+- Página aprovada anterior
+- Popup aprovado
+- Botões vinculados à Shopee
+- X / Ver o site / ESC / clique fora funcionando
+- Popup fecha automático em 25s
+- Animação visível no hero: fumaça, brilho e refis/bolinhas
+- Animação no popup: fumaça, partículas e bolinhas
 
-Suba os 4 arquivos na raiz do GitHub.
+Suba todos os arquivos na raiz do GitHub.
