@@ -1,10 +1,11 @@
-# Useventtos - Popup V5 Final
+# Useventtos - V6 Ajustes Kits
 
-Ajustes:
-- X corrigido para fechar
-- Barra movida para baixo da frase
-- Valores removidos da página principal
-- Botões vinculados à Shopee
-- Popup com fumaça, partículas e bolinhas animadas
+Ajustes aplicados:
+- Removidas faixas/valores dos kits
+- Kit Mini Sneaker: 2 Mini Sneakers + 2 Refis anti odor
+- Pack Tradicional Useventtos: 6 Bolinhas
+- Nike substituído por Useventtos nas imagens de uso
+- Card "Insira o refil" com protótipo e bolinha caindo
+- Popup V5 mantido
 
 Suba todos os arquivos na raiz do GitHub.
