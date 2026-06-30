@@ -9,76 +9,329 @@
 <meta property="og:title" content="Useventtos | Seu tênis sempre pronto para usar" />
 <meta property="og:description" content="Mini Sneaker Deodorizer com refil aromático e até 30 dias de frescor." />
 <meta property="og:image" content="useventtos-home.png" />
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:#050705}
-body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overflow-x:auto}
-.wrap{position:relative;width:100%;max-width:1440px;margin:0 auto;background:#050705}
-.site-image{width:100%;height:auto;display:block;user-select:none}
-.hotspot{position:absolute;z-index:10;display:block;border-radius:999px;cursor:pointer}
-.buy-header{left:81%;top:3.7%;width:15.5%;height:3.2%}
-.buy-hero{left:4.5%;top:26.1%;width:19.7%;height:3.5%}
-.buy-kit-1{left:5.1%;top:66.9%;width:17.2%;height:2.6%}
-.buy-kit-2{left:51.6%;top:66.9%;width:18.2%;height:2.6%}
-.buy-footer{left:78.2%;top:94.1%;width:17.5%;height:3.1%}
-.floating-buy{position:fixed;right:22px;bottom:22px;z-index:30;background:#a8ff00;color:#111;text-decoration:none;font-weight:900;padding:15px 24px;border-radius:999px;box-shadow:0 18px 50px rgba(168,255,0,.25);transition:.2s ease}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#050705;
+  color:#fff;
+  overflow-x:auto;
+}
+.wrap{
+  position:relative;
+  width:100%;
+  max-width:1536px;
+  margin:0 auto;
+  background:#050705;
+}
+.site-image{
+  width:100%;
+  height:auto;
+  display:block;
+  user-select:none;
+}
+
+/* Áreas clicáveis dos botões da imagem anexada */
+.hotspot{
+  position:absolute;
+  z-index:10;
+  display:block;
+  border-radius:999px;
+  cursor:pointer;
+}
+
+/* Botão comprar kit superior esquerdo */
+.buy-kit-top-left{
+  left:3.7%;
+  top:18.6%;
+  width:17.8%;
+  height:4.1%;
+}
+
+/* Botão comprar pack superior direito */
+.buy-kit-top-right{
+  left:73.1%;
+  top:29.0%;
+  width:18.3%;
+  height:4.2%;
+}
+
+/* Botão comprar kit inferior esquerdo */
+.buy-kit-bottom-left{
+  left:4.7%;
+  top:83.4%;
+  width:16.6%;
+  height:4.3%;
+}
+
+/* Botão comprar pack inferior direito */
+.buy-kit-bottom-right{
+  left:52.5%;
+  top:83.4%;
+  width:16.5%;
+  height:4.3%;
+}
+
+.floating-buy{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:30;
+  background:#a8ff00;
+  color:#111;
+  text-decoration:none;
+  font-weight:900;
+  padding:15px 24px;
+  border-radius:999px;
+  box-shadow:0 18px 50px rgba(168,255,0,.25);
+  transition:.2s ease;
+}
 .floating-buy:hover{transform:translateY(-3px)}
 
-.popup-overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(0,0,0,.74);backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:opacity .38s ease, visibility .38s ease}
-.popup-overlay.show{opacity:1;visibility:visible}
-.popup-box{position:relative;width:min(94vw,1160px);border-radius:24px;overflow:hidden;background:transparent;box-shadow:0 40px 140px rgba(0,0,0,.78);transform:translateY(24px) scale(.95);transition:transform .42s cubic-bezier(.16,1,.3,1);isolation:isolate}
-.popup-overlay.show .popup-box{transform:translateY(0) scale(1)}
-.popup-img{width:100%;height:auto;display:block;user-select:none;pointer-events:none;position:relative;z-index:1}
+.popup-overlay{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+  background:rgba(0,0,0,.74);
+  backdrop-filter:blur(12px);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .38s ease, visibility .38s ease;
+}
+.popup-overlay.show{
+  opacity:1;
+  visibility:visible;
+}
+.popup-box{
+  position:relative;
+  width:min(94vw,1160px);
+  border-radius:24px;
+  overflow:hidden;
+  background:transparent;
+  box-shadow:0 40px 140px rgba(0,0,0,.78);
+  transform:translateY(24px) scale(.95);
+  transition:transform .42s cubic-bezier(.16,1,.3,1);
+  isolation:isolate;
+}
+.popup-overlay.show .popup-box{
+  transform:translateY(0) scale(1);
+}
+.popup-img{
+  width:100%;
+  height:auto;
+  display:block;
+  user-select:none;
+  pointer-events:none;
+  position:relative;
+  z-index:1;
+}
 
-/* X corrigido: área clicável exatamente sobre o X da arte */
-.popup-close{position:absolute;right:2.9%;top:4.4%;width:60px;height:60px;border-radius:50%;border:0;background:rgba(255,255,255,0.001);cursor:pointer;z-index:20}
+/* X clicável */
+.popup-close{
+  position:absolute;
+  right:2.9%;
+  top:4.4%;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  border:0;
+  background:rgba(255,255,255,0.001);
+  cursor:pointer;
+  z-index:20;
+}
 
 /* Ver o site */
-.popup-see-site{position:absolute;left:59.5%;top:80.5%;width:25.5%;height:7.4%;border-radius:999px;z-index:20;cursor:pointer;background:rgba(255,255,255,0.001);border:0}
+.popup-see-site{
+  position:absolute;
+  left:59.5%;
+  top:80.5%;
+  width:25.5%;
+  height:7.4%;
+  border-radius:999px;
+  z-index:20;
+  cursor:pointer;
+  background:rgba(255,255,255,0.001);
+  border:0;
+}
 
-/* Barra abaixo da frase final */
-.popup-progress{position:absolute;left:10.4%;bottom:5.5%;height:3px;width:75.5%;background:rgba(168,255,0,.13);z-index:11;border-radius:999px;overflow:hidden}
-.popup-progress span{display:block;width:100%;height:100%;background:#a8ff00;transform-origin:left center;animation:timerbar 25s linear forwards;box-shadow:0 0 14px rgba(168,255,0,.95)}
-@keyframes timerbar{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+/* Barra abaixo da frase */
+.popup-progress{
+  position:absolute;
+  left:10.4%;
+  bottom:5.5%;
+  height:3px;
+  width:75.5%;
+  background:rgba(168,255,0,.13);
+  z-index:11;
+  border-radius:999px;
+  overflow:hidden;
+}
+.popup-progress span{
+  display:block;
+  width:100%;
+  height:100%;
+  background:#a8ff00;
+  transform-origin:left center;
+  animation:timerbar 25s linear forwards;
+  box-shadow:0 0 14px rgba(168,255,0,.95);
+}
+@keyframes timerbar{
+  from{transform:scaleX(1)}
+  to{transform:scaleX(0)}
+}
 
-/* Fumaça com vento leve */
-.wind-smoke,.wind-smoke-2,.wind-smoke-3{position:absolute;z-index:4;pointer-events:none;mix-blend-mode:screen;filter:blur(12px);background:radial-gradient(ellipse at 20% 35%,rgba(190,255,45,.34),transparent 28%),radial-gradient(ellipse at 45% 42%,rgba(168,255,0,.24),transparent 30%),radial-gradient(ellipse at 28% 65%,rgba(100,190,0,.20),transparent 34%);opacity:.62}
-.wind-smoke{left:-18%;top:6%;width:64%;height:68%;animation:windSmoke 5.5s ease-in-out infinite alternate}
-.wind-smoke-2{left:2%;top:28%;width:56%;height:55%;opacity:.48;animation:windSmoke2 7.2s ease-in-out infinite alternate}
-.wind-smoke-3{left:-10%;top:48%;width:52%;height:38%;opacity:.38;animation:windSmoke3 6.8s ease-in-out infinite alternate-reverse}
-@keyframes windSmoke{from{transform:translateX(-34px) translateY(14px) scale(1) rotate(-3deg)}to{transform:translateX(72px) translateY(-18px) scale(1.16) rotate(4deg)}}
-@keyframes windSmoke2{from{transform:translateX(-18px) translateY(-8px) scale(1.04)}to{transform:translateX(84px) translateY(12px) scale(1.22)}}
-@keyframes windSmoke3{from{transform:translateX(-22px) translateY(10px) scale(.95)}to{transform:translateX(58px) translateY(-8px) scale(1.12)}}
+/* Fumaça animada visível */
+.wind-smoke,.wind-smoke-2,.wind-smoke-3{
+  position:absolute;
+  z-index:4;
+  pointer-events:none;
+  mix-blend-mode:screen;
+  filter:blur(12px);
+  background:
+    radial-gradient(ellipse at 20% 35%,rgba(190,255,45,.34),transparent 28%),
+    radial-gradient(ellipse at 45% 42%,rgba(168,255,0,.24),transparent 30%),
+    radial-gradient(ellipse at 28% 65%,rgba(100,190,0,.20),transparent 34%);
+  opacity:.62;
+}
+.wind-smoke{
+  left:-18%;
+  top:6%;
+  width:64%;
+  height:68%;
+  animation:windSmoke 5.5s ease-in-out infinite alternate;
+}
+.wind-smoke-2{
+  left:2%;
+  top:28%;
+  width:56%;
+  height:55%;
+  opacity:.48;
+  animation:windSmoke2 7.2s ease-in-out infinite alternate;
+}
+.wind-smoke-3{
+  left:-10%;
+  top:48%;
+  width:52%;
+  height:38%;
+  opacity:.38;
+  animation:windSmoke3 6.8s ease-in-out infinite alternate-reverse;
+}
+@keyframes windSmoke{
+  from{transform:translateX(-34px) translateY(14px) scale(1) rotate(-3deg)}
+  to{transform:translateX(72px) translateY(-18px) scale(1.16) rotate(4deg)}
+}
+@keyframes windSmoke2{
+  from{transform:translateX(-18px) translateY(-8px) scale(1.04)}
+  to{transform:translateX(84px) translateY(12px) scale(1.22)}
+}
+@keyframes windSmoke3{
+  from{transform:translateX(-22px) translateY(10px) scale(.95)}
+  to{transform:translateX(58px) translateY(-8px) scale(1.12)}
+}
 
-/* Chuva/partículas */
-.rain{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden}
-.drop{position:absolute;top:-12%;width:2px;height:54px;border-radius:999px;background:linear-gradient(to bottom,transparent,rgba(168,255,0,.95),transparent);filter:drop-shadow(0 0 8px rgba(168,255,0,.8));opacity:.55;animation:dropFall linear infinite}
+/* Partículas caindo */
+.rain{
+  position:absolute;
+  inset:0;
+  z-index:5;
+  pointer-events:none;
+  overflow:hidden;
+}
+.drop{
+  position:absolute;
+  top:-12%;
+  width:2px;
+  height:54px;
+  border-radius:999px;
+  background:linear-gradient(to bottom,transparent,rgba(168,255,0,.95),transparent);
+  filter:drop-shadow(0 0 8px rgba(168,255,0,.8));
+  opacity:.55;
+  animation:dropFall linear infinite;
+}
 .drop:nth-child(1){left:18%;animation-duration:2.8s;animation-delay:.2s}
 .drop:nth-child(2){left:29%;animation-duration:3.5s;animation-delay:1s}
 .drop:nth-child(3){left:39%;animation-duration:2.9s;animation-delay:.6s}
 .drop:nth-child(4){left:51%;animation-duration:3.8s;animation-delay:1.4s}
 .drop:nth-child(5){left:72%;animation-duration:3.2s;animation-delay:.9s}
 .drop:nth-child(6){left:86%;animation-duration:4s;animation-delay:1.8s}
-@keyframes dropFall{0%{transform:translateY(-20%) scaleY(.4);opacity:0}18%{opacity:.85}100%{transform:translateY(1180%) scaleY(1);opacity:0}}
+@keyframes dropFall{
+  0%{transform:translateY(-20%) scaleY(.4);opacity:0}
+  18%{opacity:.85}
+  100%{transform:translateY(1180%) scaleY(1);opacity:0}
+}
 
 /* Bolinhas caindo */
-.fall-ball{position:absolute;z-index:6;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 35% 28%,#eaff9b 0%,#a8ff00 25%,#73b900 56%,#244500 100%);box-shadow:0 0 30px rgba(168,255,0,.55), inset -8px -10px 18px rgba(0,0,0,.35);opacity:.92;transform:translateY(-180px);animation:ballDrop 4.2s cubic-bezier(.18,.82,.24,1) forwards, ballRest 3s ease-in-out 4.2s infinite alternate}
-.fall-ball:after{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.25),transparent 55%);opacity:.45}
+.fall-ball{
+  position:absolute;
+  z-index:6;
+  border-radius:50%;
+  pointer-events:none;
+  background:radial-gradient(circle at 35% 28%,#eaff9b 0%,#a8ff00 25%,#73b900 56%,#244500 100%);
+  box-shadow:0 0 30px rgba(168,255,0,.55), inset -8px -10px 18px rgba(0,0,0,.35);
+  opacity:.92;
+  transform:translateY(-180px);
+  animation:ballDrop 4.2s cubic-bezier(.18,.82,.24,1) forwards, ballRest 3s ease-in-out 4.2s infinite alternate;
+}
+.fall-ball:after{
+  content:"";
+  position:absolute;
+  inset:18%;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.25),transparent 55%);
+  opacity:.45;
+}
 .ball1{width:42px;height:42px;left:33%;top:71%;animation-delay:.25s,4.45s}
 .ball2{width:30px;height:30px;left:43%;top:72%;animation-delay:.75s,4.95s}
 .ball3{width:24px;height:24px;left:52%;top:74%;animation-delay:1.15s,5.35s}
 .ball4{width:20px;height:20px;left:60%;top:73%;animation-delay:1.55s,5.75s}
 .ball5{width:26px;height:26px;left:24%;top:73%;animation-delay:1.9s,6.1s}
-@keyframes ballDrop{0%{transform:translateY(-260px) scale(.88);opacity:0}55%{opacity:1}78%{transform:translateY(16px) scale(1.04)}88%{transform:translateY(-8px) scale(.98)}100%{transform:translateY(0) scale(1)}}
-@keyframes ballRest{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+@keyframes ballDrop{
+  0%{transform:translateY(-260px) scale(.88);opacity:0}
+  55%{opacity:1}
+  78%{transform:translateY(16px) scale(1.04)}
+  88%{transform:translateY(-8px) scale(.98)}
+  100%{transform:translateY(0) scale(1)}
+}
+@keyframes ballRest{
+  from{transform:translateY(0)}
+  to{transform:translateY(-5px)}
+}
 
 @media(max-width:768px){
-  .wrap{width:1440px;max-width:none}
-  .floating-buy{right:14px;bottom:14px;padding:14px 20px}
-  .popup-box{width:96vw;border-radius:18px}
-  .popup-close{right:2.6%;top:3.8%;width:48px;height:48px}
-  .popup-see-site{left:56%;top:80.2%;width:31%;height:7.7%}
-  .popup-progress{bottom:5.2%}
+  .wrap{
+    width:1536px;
+    max-width:none;
+  }
+  .floating-buy{
+    right:14px;
+    bottom:14px;
+    padding:14px 20px;
+  }
+  .popup-box{
+    width:96vw;
+    border-radius:18px;
+  }
+  .popup-close{
+    right:2.6%;
+    top:3.8%;
+    width:48px;
+    height:48px;
+  }
+  .popup-see-site{
+    left:56%;
+    top:80.2%;
+    width:31%;
+    height:7.7%;
+  }
+  .popup-progress{
+    bottom:5.2%;
+  }
 }
 </style>
 </head>
@@ -87,9 +340,22 @@ body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overfl
 <div class="popup-overlay" id="popup">
   <div class="popup-box">
     <img class="popup-img" src="popup-useventtos.png" alt="Bem-vindo à Useventtos" />
-    <div class="wind-smoke"></div><div class="wind-smoke-2"></div><div class="wind-smoke-3"></div>
-    <div class="rain"><span class="drop"></span><span class="drop"></span><span class="drop"></span><span class="drop"></span><span class="drop"></span><span class="drop"></span></div>
-    <span class="fall-ball ball1"></span><span class="fall-ball ball2"></span><span class="fall-ball ball3"></span><span class="fall-ball ball4"></span><span class="fall-ball ball5"></span>
+
+    <div class="wind-smoke"></div>
+    <div class="wind-smoke-2"></div>
+    <div class="wind-smoke-3"></div>
+
+    <div class="rain">
+      <span class="drop"></span><span class="drop"></span><span class="drop"></span>
+      <span class="drop"></span><span class="drop"></span><span class="drop"></span>
+    </div>
+
+    <span class="fall-ball ball1"></span>
+    <span class="fall-ball ball2"></span>
+    <span class="fall-ball ball3"></span>
+    <span class="fall-ball ball4"></span>
+    <span class="fall-ball ball5"></span>
+
     <button class="popup-close" id="closePopup" aria-label="Fechar popup"></button>
     <button class="popup-see-site" id="seeSite" aria-label="Ver o site"></button>
     <div class="popup-progress"><span></span></div>
@@ -98,11 +364,11 @@ body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overfl
 
 <main class="wrap">
   <img class="site-image" src="useventtos-home.png" alt="Useventtos Mini Sneaker Deodorizer" />
-  <a class="hotspot buy-header" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
-  <a class="hotspot buy-hero" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
-  <a class="hotspot buy-kit-1" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Kit Mini Sneaker na Shopee"></a>
-  <a class="hotspot buy-kit-2" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Pack Bolinhas Tradicional na Shopee"></a>
-  <a class="hotspot buy-footer" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
+
+  <a class="hotspot buy-kit-top-left" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Kit Mini Sneaker na Shopee"></a>
+  <a class="hotspot buy-kit-top-right" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Pack Tradicional Useventtos na Shopee"></a>
+  <a class="hotspot buy-kit-bottom-left" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Kit Mini Sneaker na Shopee"></a>
+  <a class="hotspot buy-kit-bottom-right" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Pack Tradicional Useventtos na Shopee"></a>
 </main>
 
 <a class="floating-buy" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
@@ -112,7 +378,9 @@ const popup=document.getElementById("popup");
 const closePopup=document.getElementById("closePopup");
 const seeSite=document.getElementById("seeSite");
 
-function hidePopup(){popup.classList.remove("show")}
+function hidePopup(){
+  popup.classList.remove("show");
+}
 
 window.addEventListener("load",()=>{
   setTimeout(()=>popup.classList.add("show"),500);
@@ -121,8 +389,14 @@ window.addEventListener("load",()=>{
 
 closePopup.addEventListener("click",hidePopup);
 seeSite.addEventListener("click",hidePopup);
-popup.addEventListener("click",(event)=>{if(event.target===popup)hidePopup()});
-document.addEventListener("keydown",(event)=>{if(event.key==="Escape")hidePopup()});
+
+popup.addEventListener("click",(event)=>{
+  if(event.target===popup) hidePopup();
+});
+
+document.addEventListener("keydown",(event)=>{
+  if(event.key==="Escape") hidePopup();
+});
 </script>
 </body>
 </html>

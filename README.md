@@ -1,11 +1,14 @@
-# Useventtos - V6 Ajustes Kits
+# Useventtos - Final com imagem anexada + popup
 
-Ajustes aplicados:
-- Removidas faixas/valores dos kits
-- Kit Mini Sneaker: 2 Mini Sneakers + 2 Refis anti odor
-- Pack Tradicional Useventtos: 6 Bolinhas
-- Nike substituído por Useventtos nas imagens de uso
-- Card "Insira o refil" com protótipo e bolinha caindo
-- Popup V5 mantido
+Versão criada usando exatamente a imagem anexada pelo usuário como página principal.
 
-Suba todos os arquivos na raiz do GitHub.
+Inclui:
+- Página principal pela imagem anexada
+- Popup aprovado funcionando
+- Fumaça, partículas e bolinhas animadas no popup
+- Botão Ver o site
+- X fechar funcionando
+- Fechamento automático em 25s
+- Botões da página vinculados à Shopee
+
+Suba os 4 arquivos na raiz do GitHub.
