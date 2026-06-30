@@ -1,11 +1,10 @@
-# Useventtos - Popup V4 Animado
+# Useventtos - Popup V5 Final
 
-- Novo popup aprovado
-- Fumaça verde com vento leve
-- Filetes/partículas caindo
-- Bolinhas caindo e posicionando na parte inferior
-- Botão Ver o site
-- Fechamento automático em 25s
+Ajustes:
+- X corrigido para fechar
+- Barra movida para baixo da frase
+- Valores removidos da página principal
 - Botões vinculados à Shopee
+- Popup com fumaça, partículas e bolinhas animadas
 
 Suba todos os arquivos na raiz do GitHub.

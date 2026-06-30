@@ -23,16 +23,25 @@ body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overfl
 .buy-footer{left:78.2%;top:94.1%;width:17.5%;height:3.1%}
 .floating-buy{position:fixed;right:22px;bottom:22px;z-index:30;background:#a8ff00;color:#111;text-decoration:none;font-weight:900;padding:15px 24px;border-radius:999px;box-shadow:0 18px 50px rgba(168,255,0,.25);transition:.2s ease}
 .floating-buy:hover{transform:translateY(-3px)}
+
 .popup-overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(0,0,0,.74);backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:opacity .38s ease, visibility .38s ease}
 .popup-overlay.show{opacity:1;visibility:visible}
 .popup-box{position:relative;width:min(94vw,1160px);border-radius:24px;overflow:hidden;background:transparent;box-shadow:0 40px 140px rgba(0,0,0,.78);transform:translateY(24px) scale(.95);transition:transform .42s cubic-bezier(.16,1,.3,1);isolation:isolate}
 .popup-overlay.show .popup-box{transform:translateY(0) scale(1)}
 .popup-img{width:100%;height:auto;display:block;user-select:none;pointer-events:none;position:relative;z-index:1}
-.popup-close{position:absolute;right:3.7%;top:5.3%;width:54px;height:54px;border-radius:50%;border:0;background:transparent;cursor:pointer;z-index:12}
-.popup-see-site{position:absolute;left:59.5%;top:80.5%;width:25.5%;height:7.4%;border-radius:999px;z-index:12;cursor:pointer;background:transparent;border:0}
-.popup-progress{position:absolute;left:10.2%;bottom:7.8%;height:3px;width:75.8%;background:rgba(168,255,0,.13);z-index:11;border-radius:999px;overflow:hidden}
+
+/* X corrigido: área clicável exatamente sobre o X da arte */
+.popup-close{position:absolute;right:2.9%;top:4.4%;width:60px;height:60px;border-radius:50%;border:0;background:rgba(255,255,255,0.001);cursor:pointer;z-index:20}
+
+/* Ver o site */
+.popup-see-site{position:absolute;left:59.5%;top:80.5%;width:25.5%;height:7.4%;border-radius:999px;z-index:20;cursor:pointer;background:rgba(255,255,255,0.001);border:0}
+
+/* Barra abaixo da frase final */
+.popup-progress{position:absolute;left:10.4%;bottom:5.5%;height:3px;width:75.5%;background:rgba(168,255,0,.13);z-index:11;border-radius:999px;overflow:hidden}
 .popup-progress span{display:block;width:100%;height:100%;background:#a8ff00;transform-origin:left center;animation:timerbar 25s linear forwards;box-shadow:0 0 14px rgba(168,255,0,.95)}
 @keyframes timerbar{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+
+/* Fumaça com vento leve */
 .wind-smoke,.wind-smoke-2,.wind-smoke-3{position:absolute;z-index:4;pointer-events:none;mix-blend-mode:screen;filter:blur(12px);background:radial-gradient(ellipse at 20% 35%,rgba(190,255,45,.34),transparent 28%),radial-gradient(ellipse at 45% 42%,rgba(168,255,0,.24),transparent 30%),radial-gradient(ellipse at 28% 65%,rgba(100,190,0,.20),transparent 34%);opacity:.62}
 .wind-smoke{left:-18%;top:6%;width:64%;height:68%;animation:windSmoke 5.5s ease-in-out infinite alternate}
 .wind-smoke-2{left:2%;top:28%;width:56%;height:55%;opacity:.48;animation:windSmoke2 7.2s ease-in-out infinite alternate}
@@ -40,6 +49,8 @@ body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overfl
 @keyframes windSmoke{from{transform:translateX(-34px) translateY(14px) scale(1) rotate(-3deg)}to{transform:translateX(72px) translateY(-18px) scale(1.16) rotate(4deg)}}
 @keyframes windSmoke2{from{transform:translateX(-18px) translateY(-8px) scale(1.04)}to{transform:translateX(84px) translateY(12px) scale(1.22)}}
 @keyframes windSmoke3{from{transform:translateX(-22px) translateY(10px) scale(.95)}to{transform:translateX(58px) translateY(-8px) scale(1.12)}}
+
+/* Chuva/partículas */
 .rain{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden}
 .drop{position:absolute;top:-12%;width:2px;height:54px;border-radius:999px;background:linear-gradient(to bottom,transparent,rgba(168,255,0,.95),transparent);filter:drop-shadow(0 0 8px rgba(168,255,0,.8));opacity:.55;animation:dropFall linear infinite}
 .drop:nth-child(1){left:18%;animation-duration:2.8s;animation-delay:.2s}
@@ -49,6 +60,8 @@ body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overfl
 .drop:nth-child(5){left:72%;animation-duration:3.2s;animation-delay:.9s}
 .drop:nth-child(6){left:86%;animation-duration:4s;animation-delay:1.8s}
 @keyframes dropFall{0%{transform:translateY(-20%) scaleY(.4);opacity:0}18%{opacity:.85}100%{transform:translateY(1180%) scaleY(1);opacity:0}}
+
+/* Bolinhas caindo */
 .fall-ball{position:absolute;z-index:6;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 35% 28%,#eaff9b 0%,#a8ff00 25%,#73b900 56%,#244500 100%);box-shadow:0 0 30px rgba(168,255,0,.55), inset -8px -10px 18px rgba(0,0,0,.35);opacity:.92;transform:translateY(-180px);animation:ballDrop 4.2s cubic-bezier(.18,.82,.24,1) forwards, ballRest 3s ease-in-out 4.2s infinite alternate}
 .fall-ball:after{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.25),transparent 55%);opacity:.45}
 .ball1{width:42px;height:42px;left:33%;top:71%;animation-delay:.25s,4.45s}
@@ -58,9 +71,18 @@ body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overfl
 .ball5{width:26px;height:26px;left:24%;top:73%;animation-delay:1.9s,6.1s}
 @keyframes ballDrop{0%{transform:translateY(-260px) scale(.88);opacity:0}55%{opacity:1}78%{transform:translateY(16px) scale(1.04)}88%{transform:translateY(-8px) scale(.98)}100%{transform:translateY(0) scale(1)}}
 @keyframes ballRest{from{transform:translateY(0)}to{transform:translateY(-5px)}}
-@media(max-width:768px){.wrap{width:1440px;max-width:none}.floating-buy{right:14px;bottom:14px;padding:14px 20px}.popup-box{width:96vw;border-radius:18px}.popup-close{right:3.4%;top:4.9%;width:44px;height:44px}.popup-see-site{left:56%;top:80.2%;width:31%;height:7.7%}}
+
+@media(max-width:768px){
+  .wrap{width:1440px;max-width:none}
+  .floating-buy{right:14px;bottom:14px;padding:14px 20px}
+  .popup-box{width:96vw;border-radius:18px}
+  .popup-close{right:2.6%;top:3.8%;width:48px;height:48px}
+  .popup-see-site{left:56%;top:80.2%;width:31%;height:7.7%}
+  .popup-progress{bottom:5.2%}
+}
 </style>
 </head>
+
 <body>
 <div class="popup-overlay" id="popup">
   <div class="popup-box">
@@ -73,6 +95,7 @@ body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overfl
     <div class="popup-progress"><span></span></div>
   </div>
 </div>
+
 <main class="wrap">
   <img class="site-image" src="useventtos-home.png" alt="Useventtos Mini Sneaker Deodorizer" />
   <a class="hotspot buy-header" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
@@ -81,16 +104,25 @@ body{font-family:Arial,Helvetica,sans-serif;background:#050705;color:#fff;overfl
   <a class="hotspot buy-kit-2" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar Pack Bolinhas Tradicional na Shopee"></a>
   <a class="hotspot buy-footer" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener" aria-label="Comprar agora na Shopee"></a>
 </main>
+
 <a class="floating-buy" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
+
 <script>
 const popup=document.getElementById("popup");
 const closePopup=document.getElementById("closePopup");
 const seeSite=document.getElementById("seeSite");
+
 function hidePopup(){popup.classList.remove("show")}
-window.addEventListener("load",()=>{setTimeout(()=>popup.classList.add("show"),500);setTimeout(hidePopup,25500)});
+
+window.addEventListener("load",()=>{
+  setTimeout(()=>popup.classList.add("show"),500);
+  setTimeout(hidePopup,25500);
+});
+
 closePopup.addEventListener("click",hidePopup);
 seeSite.addEventListener("click",hidePopup);
 popup.addEventListener("click",(event)=>{if(event.target===popup)hidePopup()});
+document.addEventListener("keydown",(event)=>{if(event.key==="Escape")hidePopup()});
 </script>
 </body>
 </html>
