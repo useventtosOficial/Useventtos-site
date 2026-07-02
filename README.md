@@ -1,18 +1,18 @@
-# Useventtos V6 Oficial GitHub
+# Useventtos V7 Campanha Premium
+
+Versão com estratégia de banners oficiais por seção para evitar cortes/quebras:
+- Hero como banner completo
+- Como funciona como banner completo
+- Kits como banner completo com botões invisíveis
+- Galeria como banner completo
+- Benefícios como banner premium
+- Popup aprovado
+- Vídeo de produção
+- Música com botão de ativação
+- Playlist com placeholder para Poesia Acústica 2
 
 Suba todos os arquivos e a pasta `assets` na raiz do GitHub.
 
-Inclui:
-- Hero com imagem oficial nova
-- Como funciona com arte aprovada
-- Kits com arte aprovada
-- Galeria separada em 4 cards
-- Popup aprovado
-- Vídeo de produção
-- Música com botão de ativar
-- Playlist com placeholder para Poesia Acústica 2
-- Botões Shopee funcionando
-
 Para Poesia Acústica 2:
-- Suba o arquivo `poesia-acustica-2.mp3` na raiz do GitHub.
-- Atenção aos direitos autorais/licença do arquivo.
+- Suba `poesia-acustica-2.mp3` na raiz do repositório.
+- Atenção aos direitos autorais/licença.
