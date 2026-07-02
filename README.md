@@ -1,16 +1,13 @@
-# Useventtos V4 Corrigido + Música
+# Useventtos V5 Ajuste de Imagens + Música
 
-Inclui:
-- Hero com imagem recortada sem texto sobrepondo
-- Como funciona com imagens reposicionadas
-- Kits com imagens reposicionadas
-- Popup aprovado
-- Vídeo de produção
-- Botão de música
-- Playlist com:
-  1. Useventtos Trap Instrumental original
-  2. Poesia Acústica 2: placeholder
+Ajustes:
+- Hero sem texto grande sobreposto dentro da imagem
+- Recortes reposicionados para Como Funciona
+- Recortes reposicionados para Kits
+- Galeria mantida com imagens boas
+- Música com botão de ativação
+- Playlist com placeholder para Poesia Acústica 2
 
-Para ativar Poesia Acústica 2:
-- Suba um arquivo chamado exatamente poesia-acustica-2.mp3 na raiz do GitHub.
-- Atenção a direitos autorais/licença.
+Para Poesia Acústica 2:
+Suba um arquivo chamado exatamente poesia-acustica-2.mp3 na raiz do GitHub.
+Atenção a direitos autorais/licença.
