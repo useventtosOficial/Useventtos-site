@@ -1,18 +1,21 @@
-# Useventtos - Oficial GitHub Final
+# Useventtos - Versão com vídeo
 
-Arquivos:
+Arquivos para subir na raiz do GitHub:
 - index.html
 - useventtos-page.png
 - popup-useventtos.png
+- useventtosVDO.mp4
 - README.md
 
-Inclui:
-- Página aprovada anterior
-- Popup aprovado
-- Botões vinculados à Shopee
-- X / Ver o site / ESC / clique fora funcionando
-- Popup fecha automático em 25s
-- Animação visível no hero: fumaça, brilho e refis/bolinhas
-- Animação no popup: fumaça, partículas e bolinhas
+Funcionalidades:
+- Popup mantido
+- Botões Shopee funcionando
+- Menu/Hero com links para Produto, Como funciona, Kits e Galeria
+- Vídeo de produção em seção própria
+- Fumaça verde animada atrás do vídeo
+- Hero com fumaça/refis/brilho animados
 
-Suba todos os arquivos na raiz do GitHub.
+Configuração GitHub Pages:
+- Deploy from a branch
+- main/principal
+- /root
