@@ -1,13 +1,16 @@
-# Useventtos HTML Premium V3 Refeito
+# Useventtos V4 Corrigido + Música
 
-Esta versão mantém a estrutura nova em HTML/CSS e corrige:
-- Hero com slogan menor, sem cortar
-- Cards sem texto antigo por trás
-- Como funciona com imagens limpas
-- Kits com imagens limpas
-- Popup aprovado mantido
-- Vídeo mantido
-- Botões Shopee funcionando
-- Links de menu funcionando
+Inclui:
+- Hero com imagem recortada sem texto sobrepondo
+- Como funciona com imagens reposicionadas
+- Kits com imagens reposicionadas
+- Popup aprovado
+- Vídeo de produção
+- Botão de música
+- Playlist com:
+  1. Useventtos Trap Instrumental original
+  2. Poesia Acústica 2: placeholder
 
-Suba todos os arquivos na raiz do GitHub, substituindo os antigos.
+Para ativar Poesia Acústica 2:
+- Suba um arquivo chamado exatamente poesia-acustica-2.mp3 na raiz do GitHub.
+- Atenção a direitos autorais/licença.
