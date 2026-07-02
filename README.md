@@ -1,21 +1,27 @@
-# Useventtos - Versão com vídeo
+# Useventtos HTML/CSS Premium v1
 
 Arquivos para subir na raiz do GitHub:
 - index.html
-- useventtos-page.png
 - popup-useventtos.png
+- hero-product.jpg
+- step-1.jpg
+- step-2.jpg
+- step-3.jpg
+- kit-mini.jpg
+- kit-pack.jpg
+- gallery-1.jpg
+- gallery-2.jpg
+- gallery-3.jpg
+- gallery-4.jpg
 - useventtosVDO.mp4
 - README.md
 
 Funcionalidades:
-- Popup mantido
+- Landing page reconstruída em HTML/CSS real
+- Menu fixo e links para sessões
+- Popup aprovado
+- Vídeo de produção
+- Fumaça e bolinhas animadas
 - Botões Shopee funcionando
-- Menu/Hero com links para Produto, Como funciona, Kits e Galeria
-- Vídeo de produção em seção própria
-- Fumaça verde animada atrás do vídeo
-- Hero com fumaça/refis/brilho animados
-
-Configuração GitHub Pages:
-- Deploy from a branch
-- main/principal
-- /root
+- FAQ interativo
+- Layout responsivo
