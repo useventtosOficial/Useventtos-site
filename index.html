@@ -35,7 +35,6 @@ a{text-decoration:none;color:inherit}
 ::selection{background:var(--green);color:#111}
 .section-anchor{scroll-margin-top:120px}
 
-/* TOP */
 .topbar{
   min-height:38px;
   display:flex;
@@ -77,11 +76,7 @@ a{text-decoration:none;color:inherit}
     linear-gradient(135deg,#7bd600,#c6ff00);
   box-shadow:0 0 28px rgba(168,255,0,.28);
 }
-.brand strong{
-  font-size:27px;
-  letter-spacing:.03em;
-  font-weight:950;
-}
+.brand strong{font-size:27px;letter-spacing:.03em;font-weight:950}
 .nav{display:flex;gap:42px;align-items:center}
 .nav a{
   font-size:14px;
@@ -176,71 +171,42 @@ a{text-decoration:none;color:inherit}
 .hero-benefits div:first-child{padding-left:0}
 .hero-benefits div:last-child{border-right:none}
 .hero-benefits b{
-  display:block;
-  color:var(--green);
-  font-size:38px;
-  line-height:1;
-  margin-bottom:8px;
+  display:block;color:var(--green);font-size:38px;line-height:1;margin-bottom:8px;
 }
 .hero-benefits span{
-  display:block;
-  font-size:13px;
-  line-height:1.22;
-  font-weight:800;
-  color:#f2f7ed;
+  display:block;font-size:13px;line-height:1.22;font-weight:800;color:#f2f7ed;
 }
 .hero-visual{
-  position:relative;
-  z-index:3;
-  min-height:650px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position:relative;z-index:3;min-height:650px;display:flex;align-items:center;justify-content:center;
 }
 .hero-product-card{
-  position:relative;
-  width:100%;
-  border-radius:38px;
-  overflow:hidden;
-  box-shadow:0 42px 120px rgba(0,0,0,.48);
-  isolation:isolate;
+  position:relative;width:100%;border-radius:38px;overflow:hidden;
+  box-shadow:0 42px 120px rgba(0,0,0,.48);isolation:isolate;
 }
 .hero-product-card::after{
-  content:"";
-  position:absolute;inset:0;
+  content:"";position:absolute;inset:0;
   background:radial-gradient(circle at 54% 52%,rgba(168,255,0,.18),transparent 55%);
-  mix-blend-mode:screen;
-  animation:pulseGlow 3s ease-in-out infinite alternate;
+  mix-blend-mode:screen;animation:pulseGlow 3s ease-in-out infinite alternate;
 }
 .hero-product{
-  width:100%;
-  height:auto;
-  transform:scale(1.025);
+  width:100%;height:auto;transform:scale(1.025);
   animation:shoeFloat 4.6s ease-in-out infinite alternate;
 }
 @keyframes shoeFloat{from{transform:scale(1.025) translateY(0) rotate(-.2deg)}to{transform:scale(1.035) translateY(-10px) rotate(.3deg)}}
 @keyframes pulseGlow{from{opacity:.34}to{opacity:.72}}
-
 .slogan{
-  position:absolute;
-  right:2%;
-  top:4%;
-  z-index:6;
-  font-size:clamp(28px,4.1vw,66px);
-  line-height:.92;
-  font-weight:950;
-  font-style:italic;
-  transform:rotate(-6deg);
+  position:absolute;right:3%;top:8%;z-index:6;
+  font-size:clamp(23px,3.4vw,52px);
+  line-height:.94;font-weight:950;font-style:italic;
+  transform:rotate(-5deg);
   text-shadow:0 10px 30px rgba(0,0,0,.65);
   pointer-events:none;
+  max-width:70%;
+  text-align:right;
 }
 .slogan span{color:var(--green)}
 .smoke,.smoke2,.smoke3{
-  position:absolute;
-  pointer-events:none;
-  z-index:2;
-  mix-blend-mode:screen;
-  filter:blur(18px);
+  position:absolute;pointer-events:none;z-index:2;mix-blend-mode:screen;filter:blur(18px);
   background:
     radial-gradient(ellipse at 20% 35%,rgba(190,255,45,.36),transparent 28%),
     radial-gradient(ellipse at 45% 42%,rgba(168,255,0,.24),transparent 30%),
@@ -253,10 +219,7 @@ a{text-decoration:none;color:inherit}
 @keyframes windB{from{transform:translateX(22px) scale(1)}to{transform:translateX(-58px) scale(1.16)}}
 @keyframes windC{from{transform:translateX(-20px) translateY(-8px)}to{transform:translateX(48px) translateY(10px)}}
 .orb{
-  position:absolute;
-  z-index:7;
-  border-radius:50%;
-  pointer-events:none;
+  position:absolute;z-index:7;border-radius:50%;pointer-events:none;
   background:radial-gradient(circle at 35% 28%,#eaff9b 0%,#a8ff00 28%,#73b900 58%,#244500 100%);
   box-shadow:0 0 36px rgba(168,255,0,.58), inset -8px -10px 18px rgba(0,0,0,.38);
   animation:orbFloat 3.5s ease-in-out infinite alternate;
@@ -273,72 +236,44 @@ a{text-decoration:none;color:inherit}
   background:#050705;
 }
 .section::before{
-  content:"";
-  position:absolute;
-  top:0;left:5vw;right:5vw;height:1px;
+  content:"";position:absolute;top:0;left:5vw;right:5vw;height:1px;
   background:linear-gradient(90deg,transparent,rgba(168,255,0,.32),transparent);
 }
 .section-title{text-align:center;margin-bottom:40px}
 .section-title .eyebrow{margin-bottom:8px}
-.section-title h2{
-  font-size:clamp(34px,4.3vw,60px);
-  letter-spacing:-.045em;
-  line-height:.95;
-}
+.section-title h2{font-size:clamp(34px,4.3vw,60px);letter-spacing:-.045em;line-height:.95}
 
 /* HOW */
 .steps-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
 }
 .step-card{
   min-height:330px;
-  display:grid;
-  grid-template-columns:42% 58%;
-  align-items:stretch;
-  overflow:hidden;
-  border-radius:26px;
+  display:grid;grid-template-columns:42% 58%;
+  align-items:stretch;overflow:hidden;border-radius:26px;
   background:linear-gradient(145deg,#111510,#080a08);
   border:1px solid rgba(255,255,255,.07);
   box-shadow:0 30px 80px rgba(0,0,0,.28);
 }
 .step-text{
-  position:relative;
-  z-index:2;
-  padding:30px 24px;
-  background:linear-gradient(90deg,#10140f 0%,#10140f 72%,rgba(16,20,15,.80) 100%);
+  position:relative;z-index:3;padding:30px 24px;
+  background:#10140f;
 }
-.step-image{
-  position:relative;
-  overflow:hidden;
+.step-image{position:relative;overflow:hidden;background:#050705}
+.step-image::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(16,20,15,.08),transparent);
+  z-index:2;pointer-events:none;
 }
-.step-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transform:scale(1.04);
-}
+.step-image img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
 .num{
-  width:44px;height:44px;border-radius:8px;
-  display:grid;place-items:center;
+  width:44px;height:44px;border-radius:8px;display:grid;place-items:center;
   background:linear-gradient(135deg,var(--green),var(--green2));
-  color:#111;
-  font-size:28px;
-  font-weight:950;
-  margin-bottom:18px;
+  color:#111;font-size:28px;font-weight:950;margin-bottom:18px;
 }
-.step-card h3{
-  font-size:28px;
-  line-height:1.02;
-  margin-bottom:14px;
-}
+.step-card h3{font-size:28px;line-height:1.02;margin-bottom:14px}
 .step-card h3 span{color:var(--green)}
-.step-card p{
-  color:#d3d9cf;
-  line-height:1.5;
-  font-size:16px;
-}
+.step-card p{color:#d3d9cf;line-height:1.5;font-size:16px}
 
 /* VIDEO */
 .video-section{
@@ -351,11 +286,7 @@ a{text-decoration:none;color:inherit}
   overflow:hidden;
 }
 .video-smoke,.video-smoke-2{
-  position:absolute;
-  pointer-events:none;
-  mix-blend-mode:screen;
-  filter:blur(24px);
-  opacity:.50;
+  position:absolute;pointer-events:none;mix-blend-mode:screen;filter:blur(24px);opacity:.50;
   background:
     radial-gradient(ellipse at 28% 38%,rgba(190,255,45,.32),transparent 30%),
     radial-gradient(ellipse at 55% 55%,rgba(168,255,0,.18),transparent 34%),
@@ -365,31 +296,10 @@ a{text-decoration:none;color:inherit}
 .video-smoke-2{right:-18%;bottom:8%;width:54%;height:50%;opacity:.38;animation:videoSmokeB 8.5s ease-in-out infinite alternate-reverse}
 @keyframes videoSmokeA{from{transform:translateX(-26px) translateY(10px) scale(1)}to{transform:translateX(82px) translateY(-12px) scale(1.2)}}
 @keyframes videoSmokeB{from{transform:translateX(24px) translateY(-8px) scale(1)}to{transform:translateX(-70px) translateY(18px) scale(1.2)}}
-.video-content{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:.72fr 1.28fr;
-  gap:48px;
-  align-items:center;
-}
-.video-copy h2{
-  font-size:clamp(44px,5.6vw,86px);
-  line-height:.88;
-  letter-spacing:-.06em;
-  margin-bottom:24px;
-}
-.video-copy p{
-  color:#b9c2b4;
-  font-size:19px;
-  line-height:1.65;
-}
-.video-tags{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:28px;
-}
+.video-content{position:relative;z-index:2;display:grid;grid-template-columns:.72fr 1.28fr;gap:48px;align-items:center}
+.video-copy h2{font-size:clamp(44px,5.6vw,86px);line-height:.88;letter-spacing:-.06em;margin-bottom:24px}
+.video-copy p{color:#b9c2b4;font-size:19px;line-height:1.65}
+.video-tags{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
 .video-tags span{
   border:1px solid rgba(168,255,0,.25);
   background:rgba(255,255,255,.04);
@@ -400,138 +310,62 @@ a{text-decoration:none;color:inherit}
   font-weight:850;
 }
 .video-frame{
-  position:relative;
-  border-radius:34px;
-  padding:10px;
+  position:relative;border-radius:34px;padding:10px;
   background:linear-gradient(135deg,rgba(168,255,0,.55),rgba(255,255,255,.08),rgba(168,255,0,.22));
   box-shadow:0 36px 120px rgba(0,0,0,.55),0 0 70px rgba(168,255,0,.12);
 }
-.video-frame video{
-  width:100%;
-  display:block;
-  border-radius:26px;
-  background:#000;
-}
+.video-frame video{width:100%;display:block;border-radius:26px;background:#000}
 .video-frame::before{
-  content:"";
-  position:absolute;
-  inset:-14%;
-  z-index:-1;
+  content:"";position:absolute;inset:-14%;z-index:-1;
   background:radial-gradient(circle at 55% 50%,rgba(168,255,0,.26),transparent 58%);
-  filter:blur(36px);
-  animation:videoGlow 3.2s ease-in-out infinite alternate;
+  filter:blur(36px);animation:videoGlow 3.2s ease-in-out infinite alternate;
 }
 @keyframes videoGlow{from{opacity:.45;transform:scale(.98)}to{opacity:.82;transform:scale(1.05)}}
 
 /* KITS */
-.kits-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:26px;
-}
+.kits-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 .kit-card{
-  min-height:360px;
-  display:grid;
-  grid-template-columns:42% 58%;
-  overflow:hidden;
-  border-radius:28px;
+  min-height:360px;display:grid;grid-template-columns:42% 58%;
+  overflow:hidden;border-radius:28px;
   background:linear-gradient(145deg,#111510,#070907);
   border:1px solid rgba(168,255,0,.22);
   box-shadow:0 30px 90px rgba(0,0,0,.30);
 }
-.kit-text{
-  position:relative;
-  z-index:2;
-  padding:32px 28px;
-  background:linear-gradient(90deg,#10140f 0%,#10140f 74%,rgba(16,20,15,.82) 100%);
-}
-.kit-image{
-  overflow:hidden;
-}
-.kit-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transform:scale(1.04);
-}
+.kit-text{position:relative;z-index:3;padding:32px 28px;background:#10140f}
+.kit-image{overflow:hidden;background:#050705}
+.kit-image img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
 .badge{
-  display:inline-flex;
-  background:var(--green);
-  color:#111;
-  border-radius:999px;
-  padding:7px 14px;
-  font-size:12px;
-  text-transform:uppercase;
-  font-weight:950;
-  margin-bottom:18px;
+  display:inline-flex;background:var(--green);color:#111;border-radius:999px;
+  padding:7px 14px;font-size:12px;text-transform:uppercase;font-weight:950;margin-bottom:18px;
 }
-.kit-card h3{
-  font-size:38px;
-  line-height:.95;
-  letter-spacing:-.04em;
-  margin-bottom:22px;
-}
+.kit-card h3{font-size:38px;line-height:.95;letter-spacing:-.04em;margin-bottom:22px}
 .kit-card h3 span{color:var(--green)}
-.kit-list{
-  display:grid;
-  gap:12px;
-  margin-bottom:34px;
-  color:#f0f4ec;
-  font-size:18px;
-}
+.kit-list{display:grid;gap:12px;margin-bottom:34px;color:#f0f4ec;font-size:18px}
 .kit-list span::before{content:"✓";color:var(--green);font-weight:950;margin-right:12px}
 
 /* GALLERY */
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .gallery-grid img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  border-radius:22px;
-  border:1px solid rgba(255,255,255,.06);
-  transition:.3s ease;
+  width:100%;height:260px;object-fit:cover;border-radius:22px;
+  border:1px solid rgba(255,255,255,.06);transition:.3s ease;
 }
 .gallery-grid img:hover{transform:translateY(-6px);filter:brightness(1.12)}
 
 /* BENEFITS */
 .benefits-strip{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:26px;
-  overflow:hidden;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1px solid rgba(255,255,255,.08);border-radius:26px;overflow:hidden;
   background:linear-gradient(145deg,#0f120e,#080a08);
 }
-.benefit{
-  padding:30px;
-  border-right:1px solid rgba(255,255,255,.10);
-  display:grid;
-  grid-template-columns:auto 1fr;
-  gap:18px;
-}
+.benefit{padding:30px;border-right:1px solid rgba(255,255,255,.10);display:grid;grid-template-columns:auto 1fr;gap:18px}
 .benefit:last-child{border-right:none}
 .benefit b{color:var(--green);font-size:42px;line-height:1}
 .benefit h4{text-transform:uppercase;font-size:17px;margin-bottom:6px}
 .benefit p{color:#c2cabd;line-height:1.45;font-size:14px}
 
 /* FAQ */
-.faq-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px 24px;
-  max-width:1180px;
-  margin:0 auto;
-}
-details{
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:12px;
-  padding:16px 18px;
-  background:#090b09;
-}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;max-width:1180px;margin:0 auto}
+details{border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 18px;background:#090b09}
 summary{cursor:pointer;font-weight:850;list-style:none}
 summary::-webkit-details-marker{display:none}
 details p{color:#b9c2b4;margin-top:12px;line-height:1.5}
@@ -539,55 +373,31 @@ details p{color:#b9c2b4;margin-top:12px;line-height:1.5}
 /* FOOTER */
 .footer{
   padding:60px clamp(22px,5vw,74px) 36px;
-  display:grid;
-  grid-template-columns:1.2fr .8fr .8fr 1fr;
-  gap:40px;
-  background:#030403;
-  border-top:1px solid rgba(255,255,255,.08);
+  display:grid;grid-template-columns:1.2fr .8fr .8fr 1fr;gap:40px;
+  background:#030403;border-top:1px solid rgba(255,255,255,.08);
 }
 .footer p,.footer a{color:#b9c2b4;font-size:14px;line-height:1.7}
 .footer h4{margin-bottom:14px;text-transform:uppercase;font-size:14px}
 .social{display:flex;gap:10px;margin-top:18px}
-.social span{
-  width:34px;height:34px;border-radius:50%;
-  display:grid;place-items:center;
-  background:#111510;border:1px solid rgba(168,255,0,.25);
-  color:var(--green);
-}
-.secure-box{
-  border:1px solid rgba(168,255,0,.22);
-  border-radius:16px;
-  padding:16px;
-  color:#dfe8d9;
-  margin-top:14px;
-}
+.social span{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#111510;border:1px solid rgba(168,255,0,.25);color:var(--green)}
+.secure-box{border:1px solid rgba(168,255,0,.22);border-radius:16px;padding:16px;color:#dfe8d9;margin-top:14px}
 .buy-floating{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  z-index:58;
-  background:var(--green);
-  color:#111;
-  padding:15px 24px;
-  border-radius:999px;
-  font-weight:950;
-  text-transform:uppercase;
-  box-shadow:0 18px 50px rgba(168,255,0,.25);
+  position:fixed;right:22px;bottom:22px;z-index:58;
+  background:var(--green);color:#111;padding:15px 24px;border-radius:999px;
+  font-weight:950;text-transform:uppercase;box-shadow:0 18px 50px rgba(168,255,0,.25);
 }
 
 /* POPUP */
 .popup-overlay{
-  position:fixed;inset:0;z-index:100;
-  display:flex;align-items:center;justify-content:center;
+  position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;
   padding:22px;background:rgba(0,0,0,.74);backdrop-filter:blur(12px);
   opacity:0;visibility:hidden;transition:opacity .38s ease, visibility .38s ease;
 }
 .popup-overlay.show{opacity:1;visibility:visible}
 .popup-box{
-  position:relative;width:min(94vw,1160px);border-radius:24px;overflow:hidden;
-  background:transparent;box-shadow:0 40px 140px rgba(0,0,0,.78);
-  transform:translateY(24px) scale(.95);transition:transform .42s cubic-bezier(.16,1,.3,1);
-  isolation:isolate;
+  position:relative;width:min(94vw,1160px);border-radius:24px;overflow:hidden;background:transparent;
+  box-shadow:0 40px 140px rgba(0,0,0,.78);
+  transform:translateY(24px) scale(.95);transition:transform .42s cubic-bezier(.16,1,.3,1);isolation:isolate;
 }
 .popup-overlay.show .popup-box{transform:translateY(0) scale(1)}
 .popup-img{width:100%;height:auto;display:block;user-select:none;pointer-events:none;position:relative;z-index:1}
@@ -646,7 +456,6 @@ details p{color:#b9c2b4;margin-top:12px;line-height:1.5}
 @keyframes ballDrop{0%{transform:translateY(-260px) scale(.88);opacity:0}55%{opacity:1}78%{transform:translateY(16px) scale(1.04)}88%{transform:translateY(-8px) scale(.98)}100%{transform:translateY(0) scale(1)}}
 @keyframes ballRest{from{transform:translateY(0)}to{transform:translateY(-5px)}}
 
-/* RESPONSIVE */
 @media(max-width:1180px){
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-visual{min-height:auto}
@@ -667,7 +476,7 @@ details p{color:#b9c2b4;margin-top:12px;line-height:1.5}
   .hero p{font-size:16px}
   .hero-benefits{grid-template-columns:repeat(2,1fr);gap:18px}
   .hero-benefits div{border-right:none;padding:0}
-  .slogan{font-size:28px;right:2%;top:2%}
+  .slogan{font-size:24px;right:4%;top:4%}
   .section{padding:70px 18px}
   .step-card,.kit-card{grid-template-columns:1fr;min-height:auto}
   .step-text,.kit-text{background:#10140f}
@@ -735,7 +544,6 @@ details p{color:#b9c2b4;margin-top:12px;line-height:1.5}
       <h1>Seu tênis sempre pronto para <span>usar.</span></h1>
       <p>Elimina odores, oferece frescor duradouro e acompanha seu ritmo todos os dias.</p>
       <a class="cta-main" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora →</a>
-
       <div class="hero-benefits">
         <div><b>≋</b><span>Elimina<br>maus odores</span></div>
         <div><b>♢</b><span>Até 30 dias<br>de frescor</span></div>
@@ -743,7 +551,6 @@ details p{color:#b9c2b4;margin-top:12px;line-height:1.5}
         <div><b>◷</b><span>Prático e<br>duradouro</span></div>
       </div>
     </div>
-
     <div class="hero-visual">
       <div class="smoke"></div>
       <div class="smoke2"></div>
@@ -763,33 +570,18 @@ details p{color:#b9c2b4;margin-top:12px;line-height:1.5}
       <div class="eyebrow">Como funciona</div>
       <h2>Simples. Rápido. Eficiente.</h2>
     </div>
-
     <div class="steps-grid">
       <article class="step-card">
-        <div class="step-text">
-          <div class="num">1</div>
-          <h3>Insira o <span>refil</span></h3>
-          <p>Coloque o refil aromático dentro do Mini Sneaker.</p>
-        </div>
-        <div class="step-image"><img src="step1-product.jpg" alt="Insira o refil no Mini Sneaker" /></div>
+        <div class="step-text"><div class="num">1</div><h3>Insira o <span>refil</span></h3><p>Coloque o refil aromático dentro do Mini Sneaker.</p></div>
+        <div class="step-image"><img src="step1.jpg" alt="Insira o refil no Mini Sneaker" /></div>
       </article>
-
       <article class="step-card">
-        <div class="step-text">
-          <div class="num">2</div>
-          <h3>Coloque no <span>tênis</span></h3>
-          <p>Posicione dentro do seu tênis, de forma discreta.</p>
-        </div>
-        <div class="step-image"><img src="step2-product.jpg" alt="Coloque no tênis" /></div>
+        <div class="step-text"><div class="num">2</div><h3>Coloque no <span>tênis</span></h3><p>Posicione dentro do seu tênis, de forma discreta.</p></div>
+        <div class="step-image"><img src="step2.jpg" alt="Coloque no tênis" /></div>
       </article>
-
       <article class="step-card">
-        <div class="step-text">
-          <div class="num">3</div>
-          <h3>Sinta o <span>frescor</span></h3>
-          <p>Ele trabalha enquanto você usa e mantém seus tênis sempre frescos.</p>
-        </div>
-        <div class="step-image"><img src="step3-product.jpg" alt="Sinta o frescor" /></div>
+        <div class="step-text"><div class="num">3</div><h3>Sinta o <span>frescor</span></h3><p>Ele trabalha enquanto você usa e mantém seus tênis sempre frescos.</p></div>
+        <div class="step-image"><img src="step3.jpg" alt="Sinta o frescor" /></div>
       </article>
     </div>
   </section>
@@ -820,32 +612,24 @@ details p{color:#b9c2b4;margin-top:12px;line-height:1.5}
       <div class="eyebrow">Escolha seu kit</div>
       <h2>Kits desenvolvidos para o seu dia a dia</h2>
     </div>
-
     <div class="kits-grid">
       <article class="kit-card">
         <div class="kit-text">
           <span class="badge">Mais vendido</span>
           <h3>Kit <span>Mini Sneaker</span></h3>
-          <div class="kit-list">
-            <span>2 Mini Sneakers</span>
-            <span>2 Refis anti odor</span>
-          </div>
+          <div class="kit-list"><span>2 Mini Sneakers</span><span>2 Refis anti odor</span></div>
           <a class="cta-outline" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
         </div>
-        <div class="kit-image"><img src="kit-mini-product.jpg" alt="Kit Mini Sneaker Useventtos" /></div>
+        <div class="kit-image"><img src="kitmini.jpg" alt="Kit Mini Sneaker Useventtos" /></div>
       </article>
-
       <article class="kit-card">
         <div class="kit-text">
           <span class="badge">Pack tradicional</span>
           <h3>Pack Tradicional <span>Useventtos</span></h3>
-          <div class="kit-list">
-            <span>6 Bolinhas</span>
-            <span>Refil Anti Odor</span>
-          </div>
+          <div class="kit-list"><span>6 Bolinhas</span><span>Refil Anti Odor</span></div>
           <a class="cta-outline" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>
         </div>
-        <div class="kit-image"><img src="kit-pack-product.jpg" alt="Pack Tradicional Useventtos" /></div>
+        <div class="kit-image"><img src="kitpack.jpg" alt="Pack Tradicional Useventtos" /></div>
       </article>
     </div>
   </section>
@@ -890,26 +674,13 @@ details p{color:#b9c2b4;margin-top:12px;line-height:1.5}
 
 <footer class="footer">
   <div>
-    <a href="#produto" class="brand">
-      <span class="logo-mark">V</span>
-      <strong>USEVENTTOS</strong>
-    </a>
+    <a href="#produto" class="brand"><span class="logo-mark">V</span><strong>USEVENTTOS</strong></a>
     <p style="margin-top:16px">Frescor que te acompanha. Sempre.</p>
     <div class="social"><span>◎</span><span>♪</span><span>☎</span><span>✉</span></div>
   </div>
-  <div>
-    <h4>Navegação</h4>
-    <p><a href="#produto">Produto</a><br><a href="#como-funciona">Como funciona</a><br><a href="#kits">Kits</a><br><a href="#galeria">Galeria</a><br><a href="#faq">FAQ</a></p>
-  </div>
-  <div>
-    <h4>Informações</h4>
-    <p>Envio e Prazo<br>Trocas e Devoluções<br>Política de Privacidade<br>Termos de Uso<br>Fale Conosco</p>
-  </div>
-  <div>
-    <h4>Pagamento seguro</h4>
-    <p>Visa • Mastercard • Pix</p>
-    <div class="secure-box">🔒 SITE 100% SEGURO<br><small>Seus dados protegidos sempre.</small></div>
-  </div>
+  <div><h4>Navegação</h4><p><a href="#produto">Produto</a><br><a href="#como-funciona">Como funciona</a><br><a href="#kits">Kits</a><br><a href="#galeria">Galeria</a><br><a href="#faq">FAQ</a></p></div>
+  <div><h4>Informações</h4><p>Envio e Prazo<br>Trocas e Devoluções<br>Política de Privacidade<br>Termos de Uso<br>Fale Conosco</p></div>
+  <div><h4>Pagamento seguro</h4><p>Visa • Mastercard • Pix</p><div class="secure-box">🔒 SITE 100% SEGURO<br><small>Seus dados protegidos sempre.</small></div></div>
 </footer>
 
 <a class="buy-floating" href="https://shopee.com.br/shop/1294719962" target="_blank" rel="noopener">Comprar agora</a>

@@ -1,13 +1,13 @@
-# Useventtos HTML/CSS Premium v2 Corrigido
+# Useventtos HTML Premium V3 Refeito
 
-Versão corrigida:
-- Sem sobreposição de texto nas imagens
-- Cards em grid: texto de um lado, imagem do outro
-- Hero ajustado
+Esta versão mantém a estrutura nova em HTML/CSS e corrige:
+- Hero com slogan menor, sem cortar
+- Cards sem texto antigo por trás
+- Como funciona com imagens limpas
+- Kits com imagens limpas
 - Popup aprovado mantido
-- Vídeo de produção mantido
-- Menu fixo com links funcionais
-- Botões Shopee funcionais
-- Layout responsivo
+- Vídeo mantido
+- Botões Shopee funcionando
+- Links de menu funcionando
 
 Suba todos os arquivos na raiz do GitHub, substituindo os antigos.
