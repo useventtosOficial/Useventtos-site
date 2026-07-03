@@ -22,3 +22,26 @@ window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   if (preloader) setTimeout(() => preloader.classList.add("hide"), 650);
 });
+
+
+/* POPUP_FINAL_FIX */
+(function(){
+  const popupFinal = document.getElementById("popup");
+  const closeBtnFinal = document.getElementById("closePopup");
+  const seeBtnFinal = document.getElementById("seeSite");
+
+  function closeFinalPopup(){
+    if (popupFinal) popupFinal.classList.remove("show");
+  }
+
+  if (closeBtnFinal) closeBtnFinal.addEventListener("click", closeFinalPopup);
+  if (seeBtnFinal) seeBtnFinal.addEventListener("click", closeFinalPopup);
+
+  if (popupFinal) popupFinal.addEventListener("click", (event) => {
+    if (event.target === popupFinal) closeFinalPopup();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeFinalPopup();
+  });
+})();

@@ -212,3 +212,55 @@ a{text-decoration:none;color:inherit}img,video{display:block;max-width:100%}
   .header.scrolled .brand-logo{width:42px;height:42px}
   .preloader img{width:104px;height:104px}
 }
+
+
+/* ===== POPUP FINAL: APENAS UM X VISUAL ===== */
+/* O X e o botão VER SITE já existem na imagem oficial do popup.
+   Estes botões ficam invisíveis, mas continuam clicáveis sobre a arte. */
+.popup-close{
+  position:absolute !important;
+  right:3.4% !important;
+  top:4.8% !important;
+  width:54px !important;
+  height:54px !important;
+  border-radius:50% !important;
+  border:0 !important;
+  background:transparent !important;
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
+  cursor:pointer !important;
+  z-index:30 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+  transition:transform .25s ease, filter .25s ease;
+}
+.popup-close:hover{
+  transform:rotate(90deg) scale(1.08);
+  filter:drop-shadow(0 0 16px rgba(168,255,0,.7));
+}
+
+.popup-see-site{
+  position:absolute !important;
+  left:59.5% !important;
+  top:80.5% !important;
+  width:25.5% !important;
+  height:8.2% !important;
+  border-radius:999px !important;
+  border:0 !important;
+  background:transparent !important;
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
+  cursor:pointer !important;
+  z-index:30 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+}
+.popup-see-site:hover{
+  filter:drop-shadow(0 0 18px rgba(168,255,0,.58));
+}
+
+.popup-box button{
+  -webkit-tap-highlight-color:transparent;
+}
