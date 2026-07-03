@@ -7,7 +7,13 @@ closePopup.addEventListener("click",hidePopup);seeSite.addEventListener("click",
 popup.addEventListener("click",e=>{if(e.target===popup)hidePopup()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")hidePopup()});
 const videos=document.querySelectorAll("video");const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{const v=entry.target;if(entry.isIntersecting){v.play().catch(()=>{})}else{v.pause()}})},{threshold:.35});videos.forEach(v=>observer.observe(v));
-const music=document.getElementById("bgMusic");const soundToggle=document.getElementById("soundToggle");const heroSound=document.getElementById("heroSound");const trackSelect=document.getElementById("trackSelect");music.volume=.22;
-async function toggleMusic(){try{if(music.paused){await music.play();soundToggle.textContent="Pausar som";if(heroSound)heroSound.textContent="Pausar som";soundToggle.classList.add("on")}else{music.pause();soundToggle.textContent="Ativar som";if(heroSound)heroSound.textContent="Ativar som";soundToggle.classList.remove("on")}}catch(e){soundToggle.textContent="Arquivo ausente"}}
-soundToggle.addEventListener("click",toggleMusic);if(heroSound)heroSound.addEventListener("click",toggleMusic);
+const music=document.getElementById("bgMusic");const soundToggle=document.getElementById("soundToggle");const trackSelect=document.getElementById("trackSelect");music.volume=.22;
+async function toggleMusic(){try{if(music.paused){await music.play();soundToggle.textContent="Pausar som";soundToggle.classList.add("on")}else{music.pause();soundToggle.textContent="Ativar som";soundToggle.classList.remove("on")}}catch(e){soundToggle.textContent="Arquivo ausente"}}
+soundToggle.addEventListener("click",toggleMusic);
 trackSelect.addEventListener("change",async()=>{const wasPlaying=!music.paused;music.src=trackSelect.value;music.load();if(wasPlaying){try{await music.play()}catch(e){soundToggle.textContent="Arquivo ausente"}}});
+
+const siteHeader = document.querySelector(".header");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 40) siteHeader.classList.add("scrolled");
+  else siteHeader.classList.remove("scrolled");
+});
