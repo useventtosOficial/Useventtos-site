@@ -1,1 +1,1 @@
-Versão final sem pasta: suba todos os arquivos juntos na raiz do GitHub.
+Versão sem pasta. Suba todos os arquivos diretamente na raiz do GitHub.
