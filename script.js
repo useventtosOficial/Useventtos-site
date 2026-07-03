@@ -45,3 +45,6 @@ window.addEventListener("load", () => {
     if (event.key === "Escape") closeFinalPopup();
   });
 })();
+
+/* ===== VISUALIZADOR 360 USEVENTTOS ===== */
+(function(){const img=document.getElementById("viewer360Image"),slider=document.getElementById("viewer360Slider"),viewer=document.getElementById("viewer360");if(!img||!slider||!viewer)return;const totalFrames=24;let frame=1,isDragging=false,startX=0,startFrame=1;function setFrame(nextFrame){frame=((nextFrame-1+totalFrames)%totalFrames)+1;img.src=`sneaker-360-${String(frame).padStart(2,"0")}.jpg`;slider.value=frame}slider.addEventListener("input",()=>setFrame(parseInt(slider.value,10)));viewer.addEventListener("pointerdown",e=>{isDragging=true;startX=e.clientX;startFrame=frame;viewer.setPointerCapture(e.pointerId)});viewer.addEventListener("pointermove",e=>{if(!isDragging)return;setFrame(startFrame+Math.round((e.clientX-startX)/18))});viewer.addEventListener("pointerup",()=>isDragging=false);viewer.addEventListener("pointercancel",()=>isDragging=false);let autoplay=true;setInterval(()=>{if(autoplay&&!isDragging&&document.visibilityState==="visible")setFrame(frame+1)},900);viewer.addEventListener("mouseenter",()=>autoplay=false);viewer.addEventListener("mouseleave",()=>autoplay=true)})();
