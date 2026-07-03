@@ -152,3 +152,63 @@ a{text-decoration:none;color:inherit}img,video{display:block;max-width:100%}
     width:80%;
   }
 }
+
+
+/* ===== NOVA LOGOMARCA OFICIAL ===== */
+.brand-logo{
+  width:56px;
+  height:56px;
+  object-fit:contain;
+  border-radius:50%;
+  filter:drop-shadow(0 0 18px rgba(168,255,0,.42));
+  transition:transform .22s ease, filter .22s ease, width .28s ease, height .28s ease;
+}
+.brand:hover .brand-logo{
+  transform:scale(1.06);
+  filter:drop-shadow(0 0 26px rgba(168,255,0,.68));
+}
+.header.scrolled .brand-logo{
+  width:46px;
+  height:46px;
+}
+.footer .brand-logo,
+.footer-brand .brand-logo{
+  width:56px;
+  height:56px;
+}
+.logo-mark{
+  display:none;
+}
+
+.preloader{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#020302;
+  transition:opacity .55s ease, visibility .55s ease;
+}
+.preloader img{
+  width:128px;
+  height:128px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 34px rgba(168,255,0,.62));
+  animation:logoPulse 1.4s ease-in-out infinite alternate;
+}
+.preloader.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+@keyframes logoPulse{
+  from{transform:scale(.96);opacity:.78}
+  to{transform:scale(1.06);opacity:1}
+}
+
+@media(max-width:980px){
+  .brand-logo{width:48px;height:48px}
+  .header.scrolled .brand-logo{width:42px;height:42px}
+  .preloader img{width:104px;height:104px}
+}

@@ -17,3 +17,8 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > 40) siteHeader.classList.add("scrolled");
   else siteHeader.classList.remove("scrolled");
 });
+
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) setTimeout(() => preloader.classList.add("hide"), 650);
+});
