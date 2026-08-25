@@ -1,4 +1,18 @@
-window.addEventListener('load',()=>{document.getElementById('preloader')?.classList.add('hide');setTimeout(()=>document.getElementById('preloader')?.remove(),700)});
-const popup=document.getElementById('popup'); const closePopup=()=>popup?.classList.add('hidden'); document.getElementById('closePopup')?.addEventListener('click',closePopup);document.getElementById('seeSite')?.addEventListener('click',closePopup);setTimeout(closePopup,25000);
-const music=document.getElementById('bgMusic'),musicBtn=document.getElementById('musicToggle');let playing=false;musicBtn?.addEventListener('click',async()=>{if(!music)return;if(playing){music.pause();playing=false;musicBtn.textContent='♫ Ativar som'}else{try{await music.play();playing=true;musicBtn.textContent='❚❚ Pausar som'}catch(e){}}});
-const viewer=document.getElementById('viewer360'),viewerImg=document.getElementById('viewerImage'),slider=document.getElementById('viewerSlider');const setFrame=n=>{n=Math.max(1,Math.min(24,n));viewerImg.src=`sneaker-360-${String(n).padStart(2,'0')}.webp`;slider.value=n};slider?.addEventListener('input',e=>setFrame(+e.target.value));let dragging=false,lastX=0,frame=1;viewer?.addEventListener('pointerdown',e=>{dragging=true;lastX=e.clientX;viewer.setPointerCapture(e.pointerId)});viewer?.addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-lastX;if(Math.abs(dx)>12){frame+=dx>0?1:-1;if(frame>24)frame=1;if(frame<1)frame=24;setFrame(frame);lastX=e.clientX}});viewer?.addEventListener('pointerup',()=>dragging=false);
+const header=document.getElementById("siteHeader");
+window.addEventListener("scroll",()=>header.classList.toggle("scrolled",window.scrollY>40));
+
+const radio=document.getElementById("radio"),soundBtn=document.getElementById("soundBtn");
+if(soundBtn&&radio){radio.volume=.20;soundBtn.addEventListener("click",async()=>{if(radio.paused){try{await radio.play();soundBtn.textContent="♫ Pausar som"}catch(e){soundBtn.textContent="♫ Toque novamente"}}else{radio.pause();soundBtn.textContent="♫ Ativar som"}})}
+
+const metricObserver=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;const el=entry.target;if(el.dataset.done)return;el.dataset.done="1";const target=parseInt(el.dataset.count||"0",10);let n=0;const step=Math.max(1,Math.ceil(target/45));const timer=setInterval(()=>{n=Math.min(target,n+step);el.textContent="+"+n;if(n>=target)clearInterval(timer)},28)})},{threshold:.5});
+document.querySelectorAll("[data-count]").forEach(el=>metricObserver.observe(el));
+
+(function(){
+ const box=document.getElementById("viewer"),img=document.getElementById("viewerImg");
+ if(!box||!img)return;
+ let frame=1,startX=0,startFrame=1,drag=false,total=12;
+ function show(n){frame=((n-1+total)%total)+1;img.src=`spin-${String(frame).padStart(2,"0")}.webp`}
+ box.addEventListener("pointerdown",e=>{drag=true;startX=e.clientX;startFrame=frame;box.setPointerCapture(e.pointerId)});
+ box.addEventListener("pointermove",e=>{if(!drag)return;show(startFrame+Math.round((e.clientX-startX)/22))});
+ box.addEventListener("pointerup",()=>drag=false);box.addEventListener("pointercancel",()=>drag=false);
+})();

@@ -1,30 +1,24 @@
-# Useventtos V2 - Social Proof + Multicanal
+# USEVENTTOS V4 — REBUILD PREMIUM
 
-Base oficial preservada:
-- Hero premium
-- Fumaça verde
-- Bolinhas/refis caindo lentamente
-- Anéis de energia
-- Popup oficial
-- Música trap
-- Vídeo de produção
-- Visualizador 360°
+Reconstrução do zero.
+
+PRESERVADO:
+- Hero principal aprovado
+- fumaça verde animada
+- anéis de energia
+- bolinhas caindo
+- partículas
+- CTA e música no Hero
+
+RECONSTRUÍDO:
+- métricas com ícones vetoriais e animação
+- linha de produtos sem screenshots da Shopee
+- avaliações reais com usuário e data
+- produção / Bambu Lab A1
+- visualizador 360° limpo
 - Instagram
-- Links gerais da Shopee
+- canais Shopee e TikTok Shop com ícones vetoriais
+- CTA final
+- responsividade mobile
 
-Adicionado:
-- +140 compradores únicos
-- +127 pedidos
-- +193 produtos vendidos
-- 4,6/5 em 65 avaliações
-- Avaliações reais da Shopee
-- 6 produtos com links individuais
-- Banners oficiais da identidade Useventtos
-- Shopee + TikTok Shop
-- TikTok: Useventtos.Ofc
-- Shop Code: BRBRLCKGLHLJ
-
-Todos os arquivos ficam na raiz. Faça upload do conteúdo inteiro do ZIP no GitHub.
-
-Teste após publicar:
-https://useventtosoficial.github.io/Useventtos-site/?v=v2-social
+Suba TODOS os arquivos deste ZIP na raiz do GitHub.
