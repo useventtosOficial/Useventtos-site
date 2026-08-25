@@ -48,3 +48,40 @@ window.addEventListener("load", () => {
 
 /* ===== VISUALIZADOR 360 USEVENTTOS ===== */
 (function(){const img=document.getElementById("viewer360Image"),slider=document.getElementById("viewer360Slider"),viewer=document.getElementById("viewer360");if(!img||!slider||!viewer)return;const totalFrames=24;let frame=1,isDragging=false,startX=0,startFrame=1;function setFrame(nextFrame){frame=((nextFrame-1+totalFrames)%totalFrames)+1;img.src=`sneaker-360-${String(frame).padStart(2,"0")}.jpg`;slider.value=frame}slider.addEventListener("input",()=>setFrame(parseInt(slider.value,10)));viewer.addEventListener("pointerdown",e=>{isDragging=true;startX=e.clientX;startFrame=frame;viewer.setPointerCapture(e.pointerId)});viewer.addEventListener("pointermove",e=>{if(!isDragging)return;setFrame(startFrame+Math.round((e.clientX-startX)/18))});viewer.addEventListener("pointerup",()=>isDragging=false);viewer.addEventListener("pointercancel",()=>isDragging=false);let autoplay=true;setInterval(()=>{if(autoplay&&!isDragging&&document.visibilityState==="visible")setFrame(frame+1)},900);viewer.addEventListener("mouseenter",()=>autoplay=false);viewer.addEventListener("mouseleave",()=>autoplay=true)})();
+
+
+/* ===== BANNERS USEVENTTOS ===== */
+(function(){
+  const slider = document.getElementById("campaignSlider");
+  if(!slider) return;
+  const slides = Array.from(slider.querySelectorAll(".campaign-slide"));
+  const prev = slider.querySelector(".campaign-arrow.prev");
+  const next = slider.querySelector(".campaign-arrow.next");
+  const dotsWrap = slider.querySelector(".campaign-dots");
+  let current = 0;
+  let timer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Ir para banner ${i+1}`);
+    dot.addEventListener("click", () => show(i, true));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.querySelectorAll("button"));
+
+  function show(i, resetTimer=false){
+    current = (i + slides.length) % slides.length;
+    slides.forEach((s, idx) => s.classList.toggle("active", idx === current));
+    dots.forEach((d, idx) => d.classList.toggle("active", idx === current));
+    if(resetTimer) restart();
+  }
+  function restart(){
+    clearInterval(timer);
+    timer = setInterval(() => show(current+1), 6000);
+  }
+  prev?.addEventListener("click", () => show(current-1, true));
+  next?.addEventListener("click", () => show(current+1, true));
+  show(0);
+  restart();
+})();
