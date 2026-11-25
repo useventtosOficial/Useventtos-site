@@ -1,14 +1,9 @@
-# USEVENTTOS V5 — PREMIUM FINAL
+# Useventtos — Site Oficial (Pacote Completo)
 
-Correções desta versão:
-- Hero principal preservado.
-- Menu superior com Instagram, Shopee e TikTok Shop em SVG.
-- Conquistas reais maiores, com hierarquia e ícones.
-- Produtos completamente reorganizados, usando imagens premium já criadas para a marca.
-- Nenhuma imagem de produto usa object-fit: cover.
-- Nenhum print de marketplace usado como card de produto.
-- Galeria substituída por materiais oficiais/premium da marca.
-- Avaliações reais da versão anterior preservadas com usuário e data.
-- Produção, 360°, música, links Shopee/TikTok e Hero preservados.
+## Arquivos prontos incluídos nesta pasta:
+- `index.html`, `style.css`, `script.js` (já vinculados à sua playlist do YouTube `PLDUAx1zZF7ls0-WrIub5yQV-PaevXAKYj` iniciando em `tQ0yjYUFKAE`).
+- `USV-01.webp` até `USV-06.webp` (suas 6 imagens já convertidas e otimizadas em WebP para carregamento rápido no site).
 
-Subir TODOS os arquivos diretamente na raiz do GitHub.
+## Como publicar no GitHub Pages:
+1. Extraia todos os 10 arquivos desta pasta (`index.html`, `style.css`, `script.js`, `README.md` e `USV-01.webp` a `USV-06.webp`).
+2. Suba todos eles na raiz do seu repositório `Useventtos-site` (mantendo os arquivos que você já possui lá: `logo-useventtos.png`, `hero-useventtos.webp`, `favicon-32.png`, `apple-touch-icon.png`, `useventtosVDO.mp4`, `video-poster.webp` e `spin-01.webp` até `spin-24.webp`).
